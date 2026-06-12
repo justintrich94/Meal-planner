@@ -1,7 +1,16 @@
 {
-  "recipes": [],
+  "recipes": [
+    {
+      "id": "mqacdh7wjf93",
+      "name": "Asian Beef",
+      "notes": "",
+      "ingredients": []
+    }
+  ],
   "ingredientLinks": {},
-  "weekPlan": { "recipeIds": [] },
+  "weekPlan": {
+    "recipeIds": []
+  },
   "pantryStaples": [],
   "checkedItems": []
 }
