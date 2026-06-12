@@ -16,13 +16,20 @@
           "name": "Rice",
           "quantity": "1",
           "unit": "cup"
+        },
+        {
+          "id": "mqaclb1iyuge",
+          "name": "Asparagus",
+          "quantity": "1",
+          "unit": "bushel"
         }
       ]
     }
   ],
   "ingredientLinks": {
     "ground beef": "https://www.walmart.com/ip/Marketside-Organic-Grass-Fed-Ground-Beef-85-Lean-15-Fat-1-lb/49769689?classType=REGULAR&athbdg=L1102",
-    "rice": "https://www.walmart.com/ip/Ben-s-Original-Ready-Rice-Jasmine-Rice-Easy-Dinner-Side-8-5-Ounce-Pouch/131735446?classType=REGULAR&athbdg=L1102&adsRedirect=true"
+    "rice": "https://www.walmart.com/ip/Ben-s-Original-Ready-Rice-Jasmine-Rice-Easy-Dinner-Side-8-5-Ounce-Pouch/131735446?classType=REGULAR&athbdg=L1102&adsRedirect=true",
+    "asparagus": "https://www.walmart.com/ip/Freshly-Harvested-Cut-and-Refrigerated-Green-Asparagus-Bunch/44390952?classType=REGULAR&athbdg=L1300&from=/search"
   },
   "weekPlan": {
     "recipeIds": []
