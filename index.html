@@ -215,6 +215,7 @@ textarea{min-height:80px;resize:vertical;}
       <div class="sec-lbl" id="view-macros-label">Per Serving</div>
       <div class="macro-grid" id="view-macros-grid"></div>
     </div>
+    <button id="calc-btn" class="btn btn-secondary btn-full" style="margin-bottom:12px;display:none" onclick="calculateMacros()">✨ Calculate Macros with AI</button>
     <div class="sec-lbl">Ingredients</div>
     <div id="view-ings"></div>
     <button class="btn btn-primary btn-full" style="margin-top:14px" onclick="openIngModal(null)">+ Add Ingredient</button>
@@ -261,10 +262,11 @@ const S = {
   data: { recipes:[], ingredientLinks:{}, weekPlan:{recipeIds:[]}, pantryStaples:[], checkedItems:[] },
   sha: null,
   token: localStorage.getItem('mp_token') || '',
+  anthropicKey: localStorage.getItem('mp_anthropic_key') || '',
   view: 'recipes',
-  viewId: null,   // recipe being viewed
-  editId: null,   // recipe being edited
-  ingId: null,    // ingredient being edited
+  viewId: null,
+  editId: null,
+  ingId: null,
   saving: false,
   saveQueued: false,
 };
@@ -548,6 +550,7 @@ function addWalmartLink(normNm){
 
 // ── Settings view ─────────────────────────────────────────────
 function renderSettings(){
+  const hasAI=!!S.anthropicKey;
   const has=!!S.token;
   $('content').innerHTML=`
   <div class="set-block">
@@ -578,6 +581,22 @@ function renderSettings(){
           </div>`).join('')
       : '<div style="font-size:14px;color:var(--brown-light)">None set yet.</div>'
     }
+  </div>
+  <div class="set-block">
+    <h3>✨ AI Macro Calculator</h3>
+    <div class="status-bar ${hasAI?'ok':'warn'}">${hasAI?'✓ Anthropic key set — AI macros enabled':'No key set — add one to calculate macros automatically'}</div>
+    <div class="fg"><label>Anthropic API Key</label>
+      <input type="password" id="anthropic-inp" value="${hasAI?'••••••••':''}">
+    </div>
+    <button class="btn btn-primary btn-full" onclick="saveAnthropicKey()">Save Key</button>
+    ${hasAI?`<button class="btn btn-danger btn-full" style="margin-top:8px" onclick="clearAnthropicKey()">Remove Key</button>`:''}
+    <div style="margin-top:12px;font-size:13px;color:var(--brown-light);line-height:1.6">
+      <strong>How to get a key:</strong><br>
+      1. Go to <strong>console.anthropic.com</strong> and sign up<br>
+      2. Click <strong>API Keys</strong> in the left menu<br>
+      3. Click <strong>Create Key</strong>, copy it, paste above<br><br>
+      Each macro calculation costs a tiny fraction of a cent.
+    </div>
   </div>
   <div class="set-block">
     <h3>🔗 Walmart Links</h3>
@@ -611,6 +630,16 @@ function saveToken(){
 function clearToken(){
   S.token=''; localStorage.removeItem('mp_token');
   toast('Token removed'); renderSettings();
+}
+function saveAnthropicKey(){
+  const v=$('anthropic-inp').value.trim();
+  if(!v||v.includes('•')){ toast('Paste your actual key first'); return; }
+  S.anthropicKey=v; localStorage.setItem('mp_anthropic_key',v);
+  toast('API key saved!'); renderSettings();
+}
+function clearAnthropicKey(){
+  S.anthropicKey=''; localStorage.removeItem('mp_anthropic_key');
+  toast('API key removed'); renderSettings();
 }
 function removePantry(nm){
   const i=S.data.pantryStaples.indexOf(nm);
@@ -697,6 +726,7 @@ function openViewModal(id){
     $('view-macros-grid').innerHTML=items.map(i=>`<div class="macro-box"><div class="macro-val">${i.v}</div><div class="macro-lbl">${i.l}${i.u}</div></div>`).join('');
     md.style.display='block';
   } else { md.style.display='none'; }
+  $('calc-btn').style.display=(r.ingredients||[]).length?'flex':'none';
   renderViewIngs();
   $('view-overlay').classList.remove('hidden');
 }
@@ -781,6 +811,60 @@ function deleteIng(){
   if(r) r.ingredients=(r.ingredients||[]).filter(i=>i.id!==S.ingId);
   closeIngModal();
   scheduleSave();
+}
+
+// ── AI Macro Calculator ───────────────────────────────────────
+async function calculateMacros(){
+  if(!S.anthropicKey){ toast('Add an Anthropic API key in ⚙️ Settings first'); return; }
+  const r=S.data.recipes.find(x=>x.id===S.viewId);
+  if(!r||(r.ingredients||[]).length===0){ toast('Add ingredients first'); return; }
+
+  const ingList=r.ingredients.map(i=>[i.quantity,i.unit,i.name].filter(Boolean).join(' ')).join('\n');
+  toast('Calculating macros…',99999);
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'x-api-key':S.anthropicKey,
+        'anthropic-version':'2023-06-01',
+        'anthropic-dangerous-direct-browser-access':'true'
+      },
+      body:JSON.stringify({
+        model:'claude-haiku-4-5-20251001',
+        max_tokens:300,
+        messages:[{role:'user',content:`Estimate nutrition for this recipe: "${r.name}"
+
+Ingredients:
+${ingList}
+${r.servings?`\nServings: ${r.servings}`:''}
+
+Reply with ONLY a JSON object, no explanation:
+{"servings":<number>,"calories":<kcal per serving>,"protein":<g per serving>,"carbs":<g per serving>,"fat":<g per serving>,"fiber":<g per serving>}`}]
+      })
+    });
+    if(!res.ok){ const e=await res.json(); throw new Error(e.error?.message||`API error ${res.status}`); }
+    const data=await res.json();
+    const match=data.content[0].text.match(/\{[\s\S]*\}/);
+    if(!match) throw new Error('Unexpected AI response format');
+    const result=JSON.parse(match[0]);
+    r.macros={
+      calories:Math.round(result.calories)||0,
+      protein:Math.round(result.protein)||0,
+      carbs:Math.round(result.carbs)||0,
+      fat:Math.round(result.fat)||0,
+      fiber:Math.round(result.fiber)||0,
+    };
+    if(result.servings&&!r.servings) r.servings=Math.round(result.servings);
+    $('toast').classList.remove('show');
+    openViewModal(S.viewId);
+    scheduleSave();
+    toast('✓ Macros calculated and saved');
+  } catch(e){
+    $('toast').classList.remove('show');
+    console.error('Macro AI error:',e);
+    toast('Calculation failed: '+e.message, 4000);
+  }
 }
 
 // ── Walmart Links Manager ─────────────────────────────────────
