@@ -237,7 +237,15 @@
           "unit": "cup",
           "name": "chocolate chips/ plus more for topping"
         }
-      ]
+      ],
+      "macros": {
+        "calories": 385,
+        "protein": 4,
+        "carbs": 52,
+        "fat": 17,
+        "fiber": 2
+      },
+      "servings": 12
     },
     {
       "id": "mqaepd81ar04",
