@@ -1067,34 +1067,44 @@ async function handlePaprikaFile(event){
     toast('Checking GitHub…',99999);
     await loadData();
 
-    const existingNames=new Set(S.data.recipes.map(r=>r.name.toLowerCase()));
-    const fresh=parsed.filter(r=>!existingNames.has(r.name.toLowerCase()));
-    const dupeCount=parsed.length-fresh.length;
+    // Split into new recipes vs already-existing ones (matched by name)
+    const existingMap=new Map(S.data.recipes.map(r=>[r.name.toLowerCase(),r]));
+    const fresh=parsed.filter(r=>!existingMap.has(r.name.toLowerCase()));
+    const toUpdate=parsed.filter(r=>existingMap.has(r.name.toLowerCase())&&r._photoData&&!existingMap.get(r.name.toLowerCase()).photo);
 
     $('toast').classList.remove('show');
-    if(!fresh.length){ toast('All recipes in this file are already imported'); return; }
+    if(!fresh.length&&!toUpdate.length){
+      toast('All recipes already imported and have photos'); return;
+    }
 
-    let msg=`Found ${parsed.length} recipe${parsed.length!==1?'s':''}`;
-    if(dupeCount) msg+=` — ${dupeCount} already exist and will be skipped`;
-    msg+=`.\n\nImport ${fresh.length} new recipe${fresh.length!==1?'s':''}?`;
-    if(!confirm(msg)) return;
+    let msg='';
+    if(fresh.length) msg+=`${fresh.length} new recipe${fresh.length!==1?'s':''} to add`;
+    if(toUpdate.length) msg+=(msg?'\n':'')+ `${toUpdate.length} existing recipe${toUpdate.length!==1?'s':''} will get their photos added`;
+    if(!confirm(msg+'\n\nContinue?')) return;
 
-    // Separate out photo data before saving (don't store base64 in data.json)
+    // Separate photo data — never stored in data.json
     const photoQueue=[];
     for(const r of fresh){
-      if(r._photoData){ photoQueue.push({id:r.id,name:r.name,data:r._photoData}); }
+      if(r._photoData) photoQueue.push({id:r.id,name:r.name,data:r._photoData});
+      delete r._photoData;
+    }
+    for(const r of toUpdate){
+      const existing=existingMap.get(r.name.toLowerCase());
+      if(existing) photoQueue.push({id:existing.id,name:existing.name,data:r._photoData,existingId:existing.id});
       delete r._photoData;
     }
 
-    S.data.recipes.push(...fresh);
-    render();
-    toast('Saving recipes…',99999);
-    const ok=await saveData();
-    $('toast').classList.remove('show');
-    if(!ok){
-      await loadData(); render();
-      alert('Recipes were read but could not be saved to GitHub.\n\nCheck your GitHub token in Settings, then try again.');
-      return;
+    if(fresh.length){
+      S.data.recipes.push(...fresh);
+      render();
+      toast('Saving recipes…',99999);
+      const ok=await saveData();
+      $('toast').classList.remove('show');
+      if(!ok){
+        await loadData(); render();
+        alert('Recipes were read but could not be saved to GitHub.\n\nCheck your GitHub token in Settings, then try again.');
+        return;
+      }
     }
 
     // Upload photos one by one
@@ -1104,23 +1114,22 @@ async function handlePaprikaFile(event){
         try{
           toast(`Uploading photos… ${uploaded+1} of ${photoQueue.length}`,99999);
           const resized=await resizeImage(item.data,800,0.78);
-          const path=await uploadImageToGitHub(item.id,resized);
-          const r=S.data.recipes.find(x=>x.id===item.id);
+          const targetId=item.existingId||item.id;
+          const path=await uploadImageToGitHub(targetId,resized);
+          const r=S.data.recipes.find(x=>x.id===targetId);
           if(r) r.photo=path;
           uploaded++;
         } catch(e){ console.warn(`Photo failed for ${item.name}:`,e); }
       }
-      if(uploaded>0){
-        toast('Saving photo info…',99999);
-        await saveData();
-      }
+      if(uploaded>0){ toast('Saving photo info…',99999); await saveData(); }
     }
 
     $('toast').classList.remove('show');
     render();
-    let doneMsg=`✓ Imported ${fresh.length} recipe${fresh.length!==1?'s':''}`;
-    if(photoQueue.length) doneMsg+=` with ${uploaded} of ${photoQueue.length} photos`;
-    toast(doneMsg, 3500);
+    const parts=[];
+    if(fresh.length) parts.push(`${fresh.length} recipe${fresh.length!==1?'s':''} imported`);
+    if(uploaded) parts.push(`${uploaded} photo${uploaded!==1?'s':''} added`);
+    toast('✓ '+parts.join(', '), 3500);
   } catch(e){
     $('toast').classList.remove('show');
     console.error('Import error:',e);
