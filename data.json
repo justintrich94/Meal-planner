@@ -10,12 +10,19 @@
           "name": "Ground beef",
           "quantity": "1",
           "unit": "lbs"
+        },
+        {
+          "id": "mqackjs79idt",
+          "name": "Rice",
+          "quantity": "1",
+          "unit": "cup"
         }
       ]
     }
   ],
   "ingredientLinks": {
-    "ground beef": "https://www.walmart.com/ip/Marketside-Organic-Grass-Fed-Ground-Beef-85-Lean-15-Fat-1-lb/49769689?classType=REGULAR&athbdg=L1102"
+    "ground beef": "https://www.walmart.com/ip/Marketside-Organic-Grass-Fed-Ground-Beef-85-Lean-15-Fat-1-lb/49769689?classType=REGULAR&athbdg=L1102",
+    "rice": "https://www.walmart.com/ip/Ben-s-Original-Ready-Rice-Jasmine-Rice-Easy-Dinner-Side-8-5-Ounce-Pouch/131735446?classType=REGULAR&athbdg=L1102&adsRedirect=true"
   },
   "weekPlan": {
     "recipeIds": []
