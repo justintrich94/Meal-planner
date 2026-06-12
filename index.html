@@ -832,6 +832,11 @@ async function handlePaprikaFile(event){
     }
     if(!parsed.length) throw new Error('Could not read any recipes — the file may be corrupted');
 
+    // Reload fresh data from GitHub before importing so our SHA is current
+    $('toast').classList.remove('show');
+    toast('Checking GitHub…',99999);
+    await loadData();
+
     const existingNames=new Set(S.data.recipes.map(r=>r.name.toLowerCase()));
     const fresh=parsed.filter(r=>!existingNames.has(r.name.toLowerCase()));
     const dupeCount=parsed.length-fresh.length;
@@ -849,7 +854,14 @@ async function handlePaprikaFile(event){
     toast('Saving to GitHub…',99999);
     const ok=await saveData();
     $('toast').classList.remove('show');
-    if(ok) toast(`✓ Imported ${fresh.length} recipe${fresh.length!==1?'s':''}`);
+    if(ok){
+      toast(`✓ Imported ${fresh.length} recipe${fresh.length!==1?'s':''} and saved to GitHub`);
+    } else {
+      // Save failed — roll back so the app matches what's actually on GitHub
+      await loadData();
+      render();
+      alert('The recipes were read successfully but could not be saved to GitHub.\n\nPlease check that your GitHub token is set correctly in Settings, then try importing again.');
+    }
   } catch(e){
     $('toast').classList.remove('show');
     console.error('Import error:',e);
