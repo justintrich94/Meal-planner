@@ -29,12 +29,20 @@
           "quantity": "",
           "unit": ""
         }
-      ]
+      ],
+      "macros": {
+        "calories": 485,
+        "protein": 28,
+        "carbs": 48,
+        "fat": 16,
+        "fiber": 3
+      },
+      "servings": 4
     },
     {
       "id": "mqaepd7tl19p",
       "name": "Ambers Cinnamon Rolls",
-      "notes": "DIRECTIONS:\n\nIn a stand mixer/large bowl, combine sugar, warm water, and yeast. Give it a quick mix, cover, and let yeast dissolve for 10 minutes.\n\nAdd eggs, oil, and salt. Mix together. Then add the flour cup by cup while mixing in between. You have enough flour when 1- the dough doesnât stick to the side of the bowl 2- the dough is tacky but doesnât stick to your fingers. (Be careful not to add too much flour!)\n\nKnead for five minutes. If using a mixer- cover the dough while kneading to keep the heat inside.\n\nCover the dough and let it rise 10 minutes. Preheat the oven to 375Â° F.\n\nDump dough onto a floured surface. Divide in half and roll out each half into a large rectangle.\n\n On each half, spread 1/2 of the butter, and evenly sprinkle half of the cinnamon/brown sugar mixture.\n\nTightly roll dough up into one long snake. Using cinnamon dental floss, thread, or a very sharp knife, cut the dough (as shown in video) into 16 even slices per dough snake. (Discard the ends)\n\nOnto two greased jelly roll pans, evenly lay out all cinnamon roll dough rounds, 16 per cookie sheet. Cover and let rise 10-30 minutes.\nBake at 375Â° F for 14-15 minutes.\n\nPrepare the browned butter for the frosting and set aside to let cool. prepare your frosting by combining the wet ingredients and whipping with a hand held mixer. Then combine the powdered sugar and whip again for a couple of minutes until itâs light and fluffy. Add a little milk if needed to thin the frosting slightly.",
+      "notes": "DIRECTIONS:\n\nIn a stand mixer/large bowl, combine sugar, warm water, and yeast. Give it a quick mix, cover, and let yeast dissolve for 10 minutes.\n\nAdd eggs, oil, and salt. Mix together. Then add the flour cup by cup while mixing in between. You have enough flour when 1- the dough doesnÃ¢ÂÂt stick to the side of the bowl 2- the dough is tacky but doesnÃ¢ÂÂt stick to your fingers. (Be careful not to add too much flour!)\n\nKnead for five minutes. If using a mixer- cover the dough while kneading to keep the heat inside.\n\nCover the dough and let it rise 10 minutes. Preheat the oven to 375ÃÂ° F.\n\nDump dough onto a floured surface. Divide in half and roll out each half into a large rectangle.\n\n On each half, spread 1/2 of the butter, and evenly sprinkle half of the cinnamon/brown sugar mixture.\n\nTightly roll dough up into one long snake. Using cinnamon dental floss, thread, or a very sharp knife, cut the dough (as shown in video) into 16 even slices per dough snake. (Discard the ends)\n\nOnto two greased jelly roll pans, evenly lay out all cinnamon roll dough rounds, 16 per cookie sheet. Cover and let rise 10-30 minutes.\nBake at 375ÃÂ° F for 14-15 minutes.\n\nPrepare the browned butter for the frosting and set aside to let cool. prepare your frosting by combining the wet ingredients and whipping with a hand held mixer. Then combine the powdered sugar and whip again for a couple of minutes until itÃ¢ÂÂs light and fluffy. Add a little milk if needed to thin the frosting slightly.",
       "ingredients": [
         {
           "id": "mqaepd7ttnww",
@@ -82,7 +90,7 @@
           "id": "mqaepd7te2ts",
           "quantity": "10",
           "unit": "",
-          "name": "â 11 1/2 cups unbleached bread flour"
+          "name": "Ã¢ÂÂ 11 1/2 cups unbleached bread flour"
         },
         {
           "id": "mqaepd7t2wui",
@@ -240,61 +248,61 @@
           "id": "mqaepd810l53",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 pounds round steak (cut into bite size pieces)"
+          "name": "Ã¢ÂÂ¢ 2 pounds round steak (cut into bite size pieces)"
         },
         {
           "id": "mqaepd81nscl",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 cup beef broth"
+          "name": "Ã¢ÂÂ¢ 1 cup beef broth"
         },
         {
           "id": "mqaepd81b3z6",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1/2 cup low sodium soy sauce"
+          "name": "Ã¢ÂÂ¢ 1/2 cup low sodium soy sauce"
         },
         {
           "id": "mqaepd81bk5c",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 Tablespoon minced garlic"
+          "name": "Ã¢ÂÂ¢ 1 Tablespoon minced garlic"
         },
         {
           "id": "mqaepd81sz83",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1/3 cup brown sugar"
+          "name": "Ã¢ÂÂ¢ 1/3 cup brown sugar"
         },
         {
           "id": "mqaepd81gu3z",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 Tablespoons Sesame oil"
+          "name": "Ã¢ÂÂ¢ 2 Tablespoons Sesame oil"
         },
         {
           "id": "mqaepd81vup6",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 Tablespoons cornstarch"
+          "name": "Ã¢ÂÂ¢ 2 Tablespoons cornstarch"
         },
         {
           "id": "mqaepd81kr6c",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 Tablespoons cold water"
+          "name": "Ã¢ÂÂ¢ 2 Tablespoons cold water"
         },
         {
           "id": "mqaepd81035p",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 Broccoli Crown (cut into bite size pieces)"
+          "name": "Ã¢ÂÂ¢ 1 Broccoli Crown (cut into bite size pieces)"
         },
         {
           "id": "mqaepd8175d5",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 tablespoon sesame seeds (optional)"
+          "name": "Ã¢ÂÂ¢ 1 tablespoon sesame seeds (optional)"
         }
       ]
     },
@@ -489,7 +497,7 @@
     {
       "id": "mqaepd87w52c",
       "name": "Browned Butter Sourdough Chocolate Chip Cookies",
-      "notes": "Brown the butter. Do this by adding the butter to a saucepan over medium heat. letting it melt, then foam, then when the liquid becomes brown underneath the bubbles and brown flecks appear, itâs done! Remove from heat. \nLet the butter cool to room temp, at least 30 minutes or longer.\nPrepare one cup of sourdough discard. (Notes above on how to make discard).\nCombine the browned butter and both sugars. Beat together with an electric hand mixer or with a stand mixer. The mixture will look a bit dry and crumbly, like semi- wet sand. \nAdd the egg yolk to the mixture and beat with an electric mixer for a couple of minutes. As you continue beating, the mixture will become lighter and fluffier.\nAdd the sourdough discard and beat together until just barely combined. The dough will look more like cake batter than cookie dough. donât fret.\n\nAdd the salt, baking soda, baking powder and vanilla. Mix until combined.\nAdd the flour and mix together by hand until just barely combined, being careful not to overmix.\nAdd the chocolate chips and mix together by hand.\nTest the dough. *see note above* This is an optional step, but helps you to prevent cookies from coming out flat. Bake one, 1/4 cup sized ball of dough at 350 for 12-13 minutes. Depending on you elevation and the weather outside, the cookie dough texture can vary a bit. Testing one dough ball allows you to see if the cookie comes out well. If it is too flat, then the dough needs about 1/4 cup more flour. If it is just right, then leave it be and continue on to the next step.  \nCover the bowl of dough with plastic or a lid, and refrigerate. OR, roll into balls and transfer to an air tight container and refrigerate. Let the dough stay in the refrigerator to ferment for anywhere from one hour to seventy-two hours. I usually aim for about 4 hours. The longer it sits in the fridge, the more fermentation will happen and the more sour the cookies will taste. \n\nPreheat your oven to 350 degrees.\nPrepare a baking sheet by lining it with parchment paper*. \nRemove the dough from the fridge and scoop in to smooth 1/4 cup balls if you havenât already. Place six dough balls on each baking sheet. Top the dough balls with a few more chocolate chips.\nBake the dough balls for 13-14 minutes, or until edges just begin to brown. \nRemove from oven, and place {even more} chocolate chips on the top of each cookieâ¦. just to make it look pretty. Then sprinkle the cookies with some coarse sea salt flakes.* (Honestlyâ¦ donât skip this! Itâs so good!) \nLet cookies cool on a cooling rack. Serve immediately, and freeze any leftovers! ENJOY!",
+      "notes": "Brown the butter. Do this by adding the butter to a saucepan over medium heat. letting it melt, then foam, then when the liquid becomes brown underneath the bubbles and brown flecks appear, itÃ¢ÂÂs done! Remove from heat. \nLet the butter cool to room temp, at least 30 minutes or longer.\nPrepare one cup of sourdough discard. (Notes above on how to make discard).\nCombine the browned butter and both sugars. Beat together with an electric hand mixer or with a stand mixer. The mixture will look a bit dry and crumbly, like semi- wet sand. \nAdd the egg yolk to the mixture and beat with an electric mixer for a couple of minutes. As you continue beating, the mixture will become lighter and fluffier.\nAdd the sourdough discard and beat together until just barely combined. The dough will look more like cake batter than cookie dough. donÃ¢ÂÂt fret.\n\nAdd the salt, baking soda, baking powder and vanilla. Mix until combined.\nAdd the flour and mix together by hand until just barely combined, being careful not to overmix.\nAdd the chocolate chips and mix together by hand.\nTest the dough. *see note above* This is an optional step, but helps you to prevent cookies from coming out flat. Bake one, 1/4 cup sized ball of dough at 350 for 12-13 minutes. Depending on you elevation and the weather outside, the cookie dough texture can vary a bit. Testing one dough ball allows you to see if the cookie comes out well. If it is too flat, then the dough needs about 1/4 cup more flour. If it is just right, then leave it be and continue on to the next step.  \nCover the bowl of dough with plastic or a lid, and refrigerate. OR, roll into balls and transfer to an air tight container and refrigerate. Let the dough stay in the refrigerator to ferment for anywhere from one hour to seventy-two hours. I usually aim for about 4 hours. The longer it sits in the fridge, the more fermentation will happen and the more sour the cookies will taste. \n\nPreheat your oven to 350 degrees.\nPrepare a baking sheet by lining it with parchment paper*. \nRemove the dough from the fridge and scoop in to smooth 1/4 cup balls if you havenÃ¢ÂÂt already. Place six dough balls on each baking sheet. Top the dough balls with a few more chocolate chips.\nBake the dough balls for 13-14 minutes, or until edges just begin to brown. \nRemove from oven, and place {even more} chocolate chips on the top of each cookieÃ¢ÂÂ¦. just to make it look pretty. Then sprinkle the cookies with some coarse sea salt flakes.* (HonestlyÃ¢ÂÂ¦ donÃ¢ÂÂt skip this! ItÃ¢ÂÂs so good!) \nLet cookies cool on a cooling rack. Serve immediately, and freeze any leftovers! ENJOY!",
       "ingredients": [
         {
           "id": "mqaepd87d0ah",
@@ -707,13 +715,13 @@
           "id": "mqaepd8ea09e",
           "quantity": "",
           "unit": "",
-          "name": "Â½ teaspoon ground cinnamon"
+          "name": "ÃÂ½ teaspoon ground cinnamon"
         },
         {
           "id": "mqaepd8e5uww",
           "quantity": "",
           "unit": "",
-          "name": "Â¼ teaspoon ground nutmeg"
+          "name": "ÃÂ¼ teaspoon ground nutmeg"
         },
         {
           "id": "mqaepd8e7u5q",
@@ -737,19 +745,19 @@
           "id": "mqaepd8e1y4n",
           "quantity": "",
           "unit": "",
-          "name": "Â½ teaspoon cinnamon"
+          "name": "ÃÂ½ teaspoon cinnamon"
         },
         {
           "id": "mqaepd8epd6b",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup (50 g) quick cooking oats"
+          "name": "ÃÂ½ cup (50 g) quick cooking oats"
         },
         {
           "id": "mqaepd8eqoto",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup (113 g) salted butter, softened"
+          "name": "ÃÂ½ cup (113 g) salted butter, softened"
         },
         {
           "id": "mqaepd8em38k",
@@ -767,19 +775,19 @@
           "id": "mqaepd8ehtm9",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup (106 g) packed brown sugar"
+          "name": "ÃÂ½ cup (106 g) packed brown sugar"
         },
         {
           "id": "mqaepd8esnwk",
           "quantity": "",
           "unit": "",
-          "name": "Â¼ teaspoon salt"
+          "name": "ÃÂ¼ teaspoon salt"
         },
         {
           "id": "mqaepd8emru0",
           "quantity": "",
           "unit": "",
-          "name": "Â½ teaspoon cinnamon"
+          "name": "ÃÂ½ teaspoon cinnamon"
         },
         {
           "id": "mqaepd8ej8b8",
@@ -803,7 +811,7 @@
           "id": "mqaepd8erwog",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup (106 g) granulated sugar"
+          "name": "ÃÂ½ cup (106 g) granulated sugar"
         },
         {
           "id": "mqaepd8eh8tb",
@@ -839,7 +847,7 @@
           "id": "mqaepd8em0zf",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup heavy cream cream"
+          "name": "ÃÂ½ cup heavy cream cream"
         },
         {
           "id": "mqaepd8ec4ey",
@@ -858,7 +866,7 @@
     {
       "id": "mqaepd8gwp24",
       "name": "Carnitas",
-      "notes": "Rinse and dry the pork shoulder, rub all over with salt and pepper.\n\nCombine the Rub ingredients then rub all over the pork.\n\nPlace the pork in a slow cooker (fat cap up), top with the onion, jalapeÃ±o, minced garlic (donât worry about spreading it) and squeeze over the juice of the oranges.\n\nSlow Cook on low for 10 hours or on high for 7 hours. (Note 2 for other cook methods)\n\nPork should be tender enough to shred.\n\nRemove from slow cooker and let cool slightly. Then shred using two forks.\n\nOptional: Skim off the fat from the juices remaining in the slow cooker and discard. \nIf you have a lot more than 2 cups of juice, then reduce it down to about 2 cups. The liquid will be salty, it is the seasoning for the pork. Set liquid aside â donât bother straining onion etc, itâs super soft.\n\nTO CRISP:\n\nHeat 1 tbsp of oil in a large non stick pan or well seasoned skillet over high heat. Spread pork in the pan, drizzle over some juices. Wait until the juices evaporate and the bottom side is golden brown and crusty. Turn and just briefly sear the other side â you donât want to make it brown all over because then itâs too crispy, need tender juicy bits.\nRemove pork from skillet. Repeat in batches (takes me 4 batches) â donât crowd the pan.\nJust before serving, drizzle over more juices and serve hot, stuffed in tacos (see notes for sides, other serving suggestion and storage/make ahead).",
+      "notes": "Rinse and dry the pork shoulder, rub all over with salt and pepper.\n\nCombine the Rub ingredients then rub all over the pork.\n\nPlace the pork in a slow cooker (fat cap up), top with the onion, jalapeÃÂ±o, minced garlic (donÃ¢ÂÂt worry about spreading it) and squeeze over the juice of the oranges.\n\nSlow Cook on low for 10 hours or on high for 7 hours. (Note 2 for other cook methods)\n\nPork should be tender enough to shred.\n\nRemove from slow cooker and let cool slightly. Then shred using two forks.\n\nOptional: Skim off the fat from the juices remaining in the slow cooker and discard. \nIf you have a lot more than 2 cups of juice, then reduce it down to about 2 cups. The liquid will be salty, it is the seasoning for the pork. Set liquid aside Ã¢ÂÂ donÃ¢ÂÂt bother straining onion etc, itÃ¢ÂÂs super soft.\n\nTO CRISP:\n\nHeat 1 tbsp of oil in a large non stick pan or well seasoned skillet over high heat. Spread pork in the pan, drizzle over some juices. Wait until the juices evaporate and the bottom side is golden brown and crusty. Turn and just briefly sear the other side Ã¢ÂÂ you donÃ¢ÂÂt want to make it brown all over because then itÃ¢ÂÂs too crispy, need tender juicy bits.\nRemove pork from skillet. Repeat in batches (takes me 4 batches) Ã¢ÂÂ donÃ¢ÂÂt crowd the pan.\nJust before serving, drizzle over more juices and serve hot, stuffed in tacos (see notes for sides, other serving suggestion and storage/make ahead).",
       "ingredients": [
         {
           "id": "mqaepd8gwv6h",
@@ -870,37 +878,37 @@
           "id": "mqaepd8g6bmg",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 1/2 tsp salt"
+          "name": "Ã¢ÂÂ¢ 2 1/2 tsp salt"
         },
         {
           "id": "mqaepd8gbh0u",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 tsp black pepper"
+          "name": "Ã¢ÂÂ¢ 1 tsp black pepper"
         },
         {
           "id": "mqaepd8gdj3a",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 onion , chopped"
+          "name": "Ã¢ÂÂ¢ 1 onion , chopped"
         },
         {
           "id": "mqaepd8gm9wl",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 jalapeno , deseeded, chopped"
+          "name": "Ã¢ÂÂ¢ 1 jalapeno , deseeded, chopped"
         },
         {
           "id": "mqaepd8g463o",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 4 cloves garlic, minced"
+          "name": "Ã¢ÂÂ¢ 4 cloves garlic, minced"
         },
         {
           "id": "mqaepd8gbo7k",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 3/4 cup juice from orange (2 oranges)"
+          "name": "Ã¢ÂÂ¢ 3/4 cup juice from orange (2 oranges)"
         },
         {
           "id": "mqaepd8gxb59",
@@ -912,26 +920,26 @@
           "id": "mqaepd8g91ui",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 tbsp dried oregano"
+          "name": "Ã¢ÂÂ¢ 1 tbsp dried oregano"
         },
         {
           "id": "mqaepd8g9azp",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 tsp ground cumin"
+          "name": "Ã¢ÂÂ¢ 2 tsp ground cumin"
         },
         {
           "id": "mqaepd8gr7ww",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 tbsp olive oil"
+          "name": "Ã¢ÂÂ¢ 1 tbsp olive oil"
         }
       ]
     },
     {
       "id": "mqaepd8kp2sr",
       "name": "Chicken Noodle Soup",
-      "notes": "Push SAUTÃ button on the instant pot. Add oil and onion, and cook stirring, until union is soft. (This step is optional- it just develops the sweetness in the onion flavor. If you choose to skip the sautÃ© then just add the onion to the pot with the rest of the ingredients) add remaining ingredients, put on the lid, seal the pressure valve and set to MANUAL or HIGH PRESSURE for 18 minutes. After the cooking cycle is complete, let the pressure release naturally for at least 10 minutes, then twist the valve to release the remaining pressure. Remove chicken from pot and shred it. Put it back in the pot, and if it tickles your fancy add some heavy whipping cream to make soup this even more creamy and delicious.\nServe hot and enjoy!",
+      "notes": "Push SAUTÃÂ button on the instant pot. Add oil and onion, and cook stirring, until union is soft. (This step is optional- it just develops the sweetness in the onion flavor. If you choose to skip the sautÃÂ© then just add the onion to the pot with the rest of the ingredients) add remaining ingredients, put on the lid, seal the pressure valve and set to MANUAL or HIGH PRESSURE for 18 minutes. After the cooking cycle is complete, let the pressure release naturally for at least 10 minutes, then twist the valve to release the remaining pressure. Remove chicken from pot and shred it. Put it back in the pot, and if it tickles your fancy add some heavy whipping cream to make soup this even more creamy and delicious.\nServe hot and enjoy!",
       "ingredients": [
         {
           "id": "mqaepd8k86x4",
@@ -1094,7 +1102,7 @@
           "id": "mqaepd8oxc9d",
           "quantity": "1",
           "unit": "",
-          "name": "Â½ cups cheddar cheese, shredded"
+          "name": "ÃÂ½ cups cheddar cheese, shredded"
         },
         {
           "id": "mqaepd8o2nnj",
@@ -1156,7 +1164,7 @@
     {
       "id": "mqaepd8xagd7",
       "name": "Cilantro Lime Rice",
-      "notes": "ðð»STOVETOP DIRECTIONS:\nIn a medium pot over medium high heat, melt butter and add onion. SautÃ© until onion is soft, add garlic and sautÃ© for one more minute. Add green chiliâs, salt, 4 cups broth and 2 cups rice. Bring to a boil. Cover and reduce heat to low and cook for 18 minutes. Turn off heat, Remove the lid, fluff with fork, and add cilantro, green onion, and lime juice.\n*\n*\n*\n*\n*\nðð»INSTANT POT DIRECTIONS:\nPush âsautÃ©â, add butter/oil and onion. Cook, stirring until onion is soft, then add garlic and cook for another minute. Add green chiliâs, 2.5 cups broth, 2 cups rice, and salt. Seal the lid (make sure steam valve is sealed) and push âcancelâ (To get it off the âsautÃ©â function) then cook on manual/high pressure for 3\nminutes. Let cook, and when the cooking cycle is complete, let the pressure release naturally (which means, when itâs done and it beeps, donât twist the pressure valve to vent) for at least ten minutes, then you can release the pressure after ten minutes. Turn the instant pot âoffâ, remove the lid, and fluff with fork. Add cilantro and green onion and squeeze the lime juice in, and give it a final stir if you are cilantro averse, skip it. ðð¼",
+      "notes": "Ã°ÂÂÂÃ°ÂÂÂ»STOVETOP DIRECTIONS:\nIn a medium pot over medium high heat, melt butter and add onion. SautÃÂ© until onion is soft, add garlic and sautÃÂ© for one more minute. Add green chiliÃ¢ÂÂs, salt, 4 cups broth and 2 cups rice. Bring to a boil. Cover and reduce heat to low and cook for 18 minutes. Turn off heat, Remove the lid, fluff with fork, and add cilantro, green onion, and lime juice.\n*\n*\n*\n*\n*\nÃ°ÂÂÂÃ°ÂÂÂ»INSTANT POT DIRECTIONS:\nPush Ã¢ÂÂsautÃÂ©Ã¢ÂÂ, add butter/oil and onion. Cook, stirring until onion is soft, then add garlic and cook for another minute. Add green chiliÃ¢ÂÂs, 2.5 cups broth, 2 cups rice, and salt. Seal the lid (make sure steam valve is sealed) and push Ã¢ÂÂcancelÃ¢ÂÂ (To get it off the Ã¢ÂÂsautÃÂ©Ã¢ÂÂ function) then cook on manual/high pressure for 3\nminutes. Let cook, and when the cooking cycle is complete, let the pressure release naturally (which means, when itÃ¢ÂÂs done and it beeps, donÃ¢ÂÂt twist the pressure valve to vent) for at least ten minutes, then you can release the pressure after ten minutes. Turn the instant pot Ã¢ÂÂoffÃ¢ÂÂ, remove the lid, and fluff with fork. Add cilantro and green onion and squeeze the lime juice in, and give it a final stir if you are cilantro averse, skip it. Ã°ÂÂÂÃ°ÂÂÂ¼",
       "ingredients": [
         {
           "id": "mqaepd8xrotr",
@@ -1180,7 +1188,7 @@
           "id": "mqaepd8x95bq",
           "quantity": "",
           "unit": "",
-          "name": "1, 3 oz. can diced green chiliâs"
+          "name": "1, 3 oz. can diced green chiliÃ¢ÂÂs"
         },
         {
           "id": "mqaepd8xl2fx",
@@ -1223,7 +1231,7 @@
     {
       "id": "mqaepd90izcm",
       "name": "Dinner Rolls",
-      "notes": "Combine water, yeast, and sugar. Mix gently. Cover and let the yeast proof for ten minutes. If yeast does not foam up then do not move forward, start again with new yeast.\n\nAdd salt and oil. Mix to combine.\n\nAdd flour, cup by cup mixing in between each addition. You have enough flour when 1- the dough starts to pull away from the sides of the bowl, 2- the dough becomes tacky but not overly sticky in texture. Use the touch test (below) to determine if the dough has the right amount of flour. If it doesnât have enough, add a little flour and knead. If it has too much flour, add a teaspoon of oil and knead. Do not add too much flour!\n\nTouch test: after kneading the dough, touch it with 3 fingers. If a lot of dough sticks to your fingers, it needs more flour. If hardly any sticks to your fingers itâs just right. If it is dry and crumbly with pockets of visible flour, it has too much flour. Kneading the dough for a few extra minutes can help hydrate any excess flour.\n\nKnead the dough for 10-15 minutes. Cover with a clean kitchen towel or with a bowl lid or with plastic wrap. Let rise for 20 minutes.\nPunch down dough and dump onto a clean, floured surface. Divide into 12 rolls. Shape into balls and set on a greased 9Ã13 pan or seasoned 12-inch cast iron skillet. Cover with plastic wrap, a lid, or a clean dish towel. Allow to rise again for 20 minutes. Preheat oven to 350Â° F.\n\nBake at 350Â° F for 15 minutes.\n\nBrush the tops of the rolls with butter and sprinkle with flaky sea salt, if desired. Enjoy!",
+      "notes": "Combine water, yeast, and sugar. Mix gently. Cover and let the yeast proof for ten minutes. If yeast does not foam up then do not move forward, start again with new yeast.\n\nAdd salt and oil. Mix to combine.\n\nAdd flour, cup by cup mixing in between each addition. You have enough flour when 1- the dough starts to pull away from the sides of the bowl, 2- the dough becomes tacky but not overly sticky in texture. Use the touch test (below) to determine if the dough has the right amount of flour. If it doesnÃ¢ÂÂt have enough, add a little flour and knead. If it has too much flour, add a teaspoon of oil and knead. Do not add too much flour!\n\nTouch test: after kneading the dough, touch it with 3 fingers. If a lot of dough sticks to your fingers, it needs more flour. If hardly any sticks to your fingers itÃ¢ÂÂs just right. If it is dry and crumbly with pockets of visible flour, it has too much flour. Kneading the dough for a few extra minutes can help hydrate any excess flour.\n\nKnead the dough for 10-15 minutes. Cover with a clean kitchen towel or with a bowl lid or with plastic wrap. Let rise for 20 minutes.\nPunch down dough and dump onto a clean, floured surface. Divide into 12 rolls. Shape into balls and set on a greased 9ÃÂ13 pan or seasoned 12-inch cast iron skillet. Cover with plastic wrap, a lid, or a clean dish towel. Allow to rise again for 20 minutes. Preheat oven to 350ÃÂ° F.\n\nBake at 350ÃÂ° F for 15 minutes.\n\nBrush the tops of the rolls with butter and sprinkle with flaky sea salt, if desired. Enjoy!",
       "ingredients": [
         {
           "id": "mqaepd90nndm",
@@ -1241,7 +1249,7 @@
           "id": "mqaepd90n3z0",
           "quantity": "",
           "unit": "",
-          "name": "Â¼ cup sugar or honey"
+          "name": "ÃÂ¼ cup sugar or honey"
         },
         {
           "id": "mqaepd90utbx",
@@ -1259,7 +1267,7 @@
           "id": "mqaepd908y9d",
           "quantity": "",
           "unit": "",
-          "name": "2Â½-3 cups all-purpose flour or bread flour, give or take 1/2 cup"
+          "name": "2ÃÂ½-3 cups all-purpose flour or bread flour, give or take 1/2 cup"
         }
       ]
     },
@@ -1284,7 +1292,7 @@
           "id": "mqaepd92vdf7",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup (106 g) granulated sugar"
+          "name": "ÃÂ½ cup (106 g) granulated sugar"
         },
         {
           "id": "mqaepd92862v",
@@ -1302,19 +1310,19 @@
           "id": "mqaepd92w4kc",
           "quantity": "1",
           "unit": "",
-          "name": "Â¾ cups (249 g) all-purpose flour"
+          "name": "ÃÂ¾ cups (249 g) all-purpose flour"
         },
         {
           "id": "mqaepd929zjh",
           "quantity": "1",
           "unit": "",
-          "name": "Â¼ cups (143 g) cake flour"
+          "name": "ÃÂ¼ cups (143 g) cake flour"
         },
         {
           "id": "mqaepd92ghle",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup (50 g) dark or Dutch-process unsweetened cocoa powder (see note)"
+          "name": "ÃÂ½ cup (50 g) dark or Dutch-process unsweetened cocoa powder (see note)"
         },
         {
           "id": "mqaepd923dlu",
@@ -1326,20 +1334,20 @@
           "id": "mqaepd92g7u7",
           "quantity": "",
           "unit": "",
-          "name": "Â½ teaspoon salt"
+          "name": "ÃÂ½ teaspoon salt"
         },
         {
           "id": "mqaepd92wptl",
           "quantity": "1",
           "unit": "",
-          "name": "Â½ to 2 cups (255 to 340 g) semisweet or bittersweet chocolate chips or chunks"
+          "name": "ÃÂ½ to 2 cups (255 to 340 g) semisweet or bittersweet chocolate chips or chunks"
         }
       ]
     },
     {
       "id": "mqaepd94kns2",
       "name": "Enchilada Sauce",
-      "notes": "SautÃ© onion and garlic in oil until softened. Set them aside into a bowl.\nIn the frying pan, add tomato paste, flour, and spices, trying to incorporate together (this is tricky with how dry the mixture will be, you can add a splash of broth to help it come together if needed) when the flour is all mixed into the tomato paste, add the broth and seasonings.\nAdd the onion and garlic back in. Bring to a boil, then reduce heat to simmer, and cook until slightly thickened, 5-10 minutes.",
+      "notes": "SautÃÂ© onion and garlic in oil until softened. Set them aside into a bowl.\nIn the frying pan, add tomato paste, flour, and spices, trying to incorporate together (this is tricky with how dry the mixture will be, you can add a splash of broth to help it come together if needed) when the flour is all mixed into the tomato paste, add the broth and seasonings.\nAdd the onion and garlic back in. Bring to a boil, then reduce heat to simmer, and cook until slightly thickened, 5-10 minutes.",
       "ingredients": [
         {
           "id": "mqaepd94wlt2",
@@ -1412,55 +1420,55 @@
           "id": "mqaepd97ui58",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 30 ounces frozen hash browns , diced or shredded will work, THAWED*"
+          "name": "Ã¢ÂÂ¢ 30 ounces frozen hash browns , diced or shredded will work, THAWED*"
         },
         {
           "id": "mqaepd977y5n",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 cups sour cream"
+          "name": "Ã¢ÂÂ¢ 2 cups sour cream"
         },
         {
           "id": "mqaepd971dny",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 10.5 ounce can cream of chicken soup (or homemade)"
+          "name": "Ã¢ÂÂ¢ 10.5 ounce can cream of chicken soup (or homemade)"
         },
         {
           "id": "mqaepd97k2pn",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 10 Tablespoons butter , divided, melted"
+          "name": "Ã¢ÂÂ¢ 10 Tablespoons butter , divided, melted"
         },
         {
           "id": "mqaepd979j7y",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 teaspoon salt"
+          "name": "Ã¢ÂÂ¢ 1 teaspoon salt"
         },
         {
           "id": "mqaepd971n9n",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1/4 teaspoon freshly ground black pepper"
+          "name": "Ã¢ÂÂ¢ 1/4 teaspoon freshly ground black pepper"
         },
         {
           "id": "mqaepd971oqv",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 teaspoon dried minced onion"
+          "name": "Ã¢ÂÂ¢ 1 teaspoon dried minced onion"
         },
         {
           "id": "mqaepd97shzu",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 cups shredded cheddar cheese"
+          "name": "Ã¢ÂÂ¢ 2 cups shredded cheddar cheese"
         },
         {
           "id": "mqaepd97ga0c",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 cups corn flakes cereal"
+          "name": "Ã¢ÂÂ¢ 2 cups corn flakes cereal"
         }
       ]
     },
@@ -1473,7 +1481,7 @@
           "id": "mqaepd9aji3t",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup olive oil"
+          "name": "ÃÂ½ cup olive oil"
         },
         {
           "id": "mqaepd9atcsh",
@@ -1540,7 +1548,7 @@
     {
       "id": "mqaepd9bpn93",
       "name": "Hamburger Buns",
-      "notes": "Combine the water, sugar, and yeast in a bowl. Gently stir just enough so that the yeast isnât floating at the top of the water. Cover the bowl, and let dissolve and proof for ten minutes. \nAdd the salt, butter, and egg to the yeast mixture. Stir to combine.\nGradually and slowly add the flour, about 1 cup at a time, mixing/kneading well as added, being careful not to add too much flour. Add just enough flour so that the dough is still tacky but doesnât stick to your fingers. When the dough stops sticking to the bowl, you have enough. \nKnead the dough for 4-5 minutes by hand or 2-3 minutes if using a stand mixer.\nPut into a lightly oiled bowl (or leave it in the mixer), then cover with a clean kitchen towel or plastic wrap and let rise for two hours or until doubled in size. \nTake the dough out of the bowl and onto a lightly floured surface. Gently divide the dough into 10 or 12 equal portions. Roll each portion into a smooth ball, tucking any seams underneath. Then using your fingertips, gently flatten each ball so it is about 1/2 inch tall, forming a disk. \nPut onto a cookie sheet lined with parchment paper. Cover and let rise for one hour.\nPreheat oven to 350Â°F.\nTake a raw beaten egg and gently brush it onto the dough. if desired, Sprinkle with sesame seeds or Everything but The Bagel seasoning.\nBake for 15-17 minutes or until golden. Let cool completely.\nRight before serving, slice buns in half. *optional but recommended: Butter the insides of the bun and toast on a pancake griddle or a frying pan*. Assemble the buns with your burger and toppings and enjoy!  \n\n---\n\nMakes 8 huge, 10 good-sized or 12 medium-sized buns.",
+      "notes": "Combine the water, sugar, and yeast in a bowl. Gently stir just enough so that the yeast isnÃ¢ÂÂt floating at the top of the water. Cover the bowl, and let dissolve and proof for ten minutes. \nAdd the salt, butter, and egg to the yeast mixture. Stir to combine.\nGradually and slowly add the flour, about 1 cup at a time, mixing/kneading well as added, being careful not to add too much flour. Add just enough flour so that the dough is still tacky but doesnÃ¢ÂÂt stick to your fingers. When the dough stops sticking to the bowl, you have enough. \nKnead the dough for 4-5 minutes by hand or 2-3 minutes if using a stand mixer.\nPut into a lightly oiled bowl (or leave it in the mixer), then cover with a clean kitchen towel or plastic wrap and let rise for two hours or until doubled in size. \nTake the dough out of the bowl and onto a lightly floured surface. Gently divide the dough into 10 or 12 equal portions. Roll each portion into a smooth ball, tucking any seams underneath. Then using your fingertips, gently flatten each ball so it is about 1/2 inch tall, forming a disk. \nPut onto a cookie sheet lined with parchment paper. Cover and let rise for one hour.\nPreheat oven to 350ÃÂ°F.\nTake a raw beaten egg and gently brush it onto the dough. if desired, Sprinkle with sesame seeds or Everything but The Bagel seasoning.\nBake for 15-17 minutes or until golden. Let cool completely.\nRight before serving, slice buns in half. *optional but recommended: Butter the insides of the bun and toast on a pancake griddle or a frying pan*. Assemble the buns with your burger and toppings and enjoy!  \n\n---\n\nMakes 8 huge, 10 good-sized or 12 medium-sized buns.",
       "ingredients": [
         {
           "id": "mqaepd9blsc2",
@@ -1595,7 +1603,7 @@
     {
       "id": "mqaepd9dpf7j",
       "name": "Homemade Lasagna",
-      "notes": "For the sauce, in a large, 12-inch nonstick skillet, cook the ground meat and onion until the meat is cooked through. Drain any excess grease. Stir in the tomatoes, tomato paste, sugar, dried basil, salt and pepper. Simmer the sauce for 20 minutes.\n\nFor the filling, in a medium bowl mix the ricotta, egg, basil, parsley, salt, and Parmesan cheese.\n\nTo assemble the lasagna, lightly grease a 9X13-inch baking pan. Spread 1/2 cup or so of the sauce over the bottom into a thin layer. Layer as follows: 3 noodles, red sauce, creamy filling, mozzarella, 3 noodles, red sauce, creamy filling, mozzarella, 3 noodles, red sauce, remaining mozzarella. (Basically, all layers â the noodles, red sauce, mozzarella â are split into three layers and the creamy filling is divided among two layers.)\n\nCover with greased foil. Bake at 350 degrees for 30 minutes. Uncover, bake 20-30 minutes more until hot and bubbly. Let stand 10 minutes before cutting.\n\n\n---\n\nFreezable Meal: prepare recipe right up until the baking step and then cover with a double layer of lightly greased aluminum foil. Freeze. Thaw in the refrigerator for 1 to 2 days. To bake, increase baking time to about 40 minutes covered and 20 minutes uncovered. If baking from frozen, bake covered for 1 hour and 30 minutes, uncover and bake 30-40 minutes longer.",
+      "notes": "For the sauce, in a large, 12-inch nonstick skillet, cook the ground meat and onion until the meat is cooked through. Drain any excess grease. Stir in the tomatoes, tomato paste, sugar, dried basil, salt and pepper. Simmer the sauce for 20 minutes.\n\nFor the filling, in a medium bowl mix the ricotta, egg, basil, parsley, salt, and Parmesan cheese.\n\nTo assemble the lasagna, lightly grease a 9X13-inch baking pan. Spread 1/2 cup or so of the sauce over the bottom into a thin layer. Layer as follows: 3 noodles, red sauce, creamy filling, mozzarella, 3 noodles, red sauce, creamy filling, mozzarella, 3 noodles, red sauce, remaining mozzarella. (Basically, all layers Ã¢ÂÂ the noodles, red sauce, mozzarella Ã¢ÂÂ are split into three layers and the creamy filling is divided among two layers.)\n\nCover with greased foil. Bake at 350 degrees for 30 minutes. Uncover, bake 20-30 minutes more until hot and bubbly. Let stand 10 minutes before cutting.\n\n\n---\n\nFreezable Meal: prepare recipe right up until the baking step and then cover with a double layer of lightly greased aluminum foil. Freeze. Thaw in the refrigerator for 1 to 2 days. To bake, increase baking time to about 40 minutes covered and 20 minutes uncovered. If baking from frozen, bake covered for 1 hour and 30 minutes, uncover and bake 30-40 minutes longer.",
       "ingredients": [
         {
           "id": "mqaepd9d35js",
@@ -1607,7 +1615,7 @@
           "id": "mqaepd9dvaid",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup chopped onion"
+          "name": "ÃÂ½ cup chopped onion"
         },
         {
           "id": "mqaepd9d2oks",
@@ -1643,19 +1651,19 @@
           "id": "mqaepd9d9wff",
           "quantity": "",
           "unit": "",
-          "name": "Â¼ teaspoon dried thyme"
+          "name": "ÃÂ¼ teaspoon dried thyme"
         },
         {
           "id": "mqaepd9drvdm",
           "quantity": "",
           "unit": "",
-          "name": "Â¼ teaspoon salt"
+          "name": "ÃÂ¼ teaspoon salt"
         },
         {
           "id": "mqaepd9dmumm",
           "quantity": "",
           "unit": "",
-          "name": "Â¼ teaspoon pepper"
+          "name": "ÃÂ¼ teaspoon pepper"
         },
         {
           "id": "mqaepd9dslli",
@@ -1673,7 +1681,7 @@
           "id": "mqaepd9djfhh",
           "quantity": "",
           "unit": "",
-          "name": "Â½ teaspoon dried basil"
+          "name": "ÃÂ½ teaspoon dried basil"
         },
         {
           "id": "mqaepd9dus7a",
@@ -1685,13 +1693,13 @@
           "id": "mqaepd9d0swt",
           "quantity": "",
           "unit": "",
-          "name": "Â½ teaspoon salt"
+          "name": "ÃÂ½ teaspoon salt"
         },
         {
           "id": "mqaepd9dgp10",
           "quantity": "",
           "unit": "",
-          "name": "Â¾ cup shredded parmesan cheese"
+          "name": "ÃÂ¾ cup shredded parmesan cheese"
         },
         {
           "id": "mqaepd9d5961",
@@ -1710,7 +1718,7 @@
     {
       "id": "mqaepd9eek5j",
       "name": "Instant Pot Carnitas",
-      "notes": "In a medium mixing bowl, whisk together the mojo sauce ingredients until combined.  Set aside until ready to use.\nSeason pork chunks on all sides with salt and pepper.\nClick the âSautÃ©â setting on the Instant Pot.  Add the oil, followed by half of the pork, and sear â turning every 45-60 seconds or so â until the pork is browned on all sides.  Transfer pork to a separate clean plate, and repeat with the remaining pork, searing until it has browned on all sides.  Press âCancelâ to turn off the heat.\nPour in the mojo sauce, and toss briefly to combine with the pork. Close lid securely and set vent to âSealingâ.\nCook on high pressure for 30 minutes, followed by a natural release (about 15 minutes).\nSet the oven broiler to high heat.\nRemove the lid of the Instant Pot.  Shred the pork with two forks.  Then transfer it with a slotted spoon to a large baking sheet.  Spoon about a third of the leftover juices evenly on top of the pork and toss to combine.  Broil for 4-5 minutes, or until the edges of the pork begin browning and crisping up. Remove the baking sheet from the oven, then half of the remaining juices from the Instant Pot evenly over the pork and toss to combine.  Broil for an additional 5 minutes to get the meat even more crispy. Remove baking sheet from the oven, then ladle the remaining juices over the pork, and toss to combine.\nSprinkle with chopped fresh cilantro, then serve warm in tacos, burritos, salads, or whatever sounds good to you! Or, refrigerate pork in a sealed container for up to 3 days, or freeze for up to 3 months.",
+      "notes": "In a medium mixing bowl, whisk together the mojo sauce ingredients until combined.  Set aside until ready to use.\nSeason pork chunks on all sides with salt and pepper.\nClick the Ã¢ÂÂSautÃÂ©Ã¢ÂÂ setting on the Instant Pot.  Add the oil, followed by half of the pork, and sear Ã¢ÂÂ turning every 45-60 seconds or so Ã¢ÂÂ until the pork is browned on all sides.  Transfer pork to a separate clean plate, and repeat with the remaining pork, searing until it has browned on all sides.  Press Ã¢ÂÂCancelÃ¢ÂÂ to turn off the heat.\nPour in the mojo sauce, and toss briefly to combine with the pork. Close lid securely and set vent to Ã¢ÂÂSealingÃ¢ÂÂ.\nCook on high pressure for 30 minutes, followed by a natural release (about 15 minutes).\nSet the oven broiler to high heat.\nRemove the lid of the Instant Pot.  Shred the pork with two forks.  Then transfer it with a slotted spoon to a large baking sheet.  Spoon about a third of the leftover juices evenly on top of the pork and toss to combine.  Broil for 4-5 minutes, or until the edges of the pork begin browning and crisping up. Remove the baking sheet from the oven, then half of the remaining juices from the Instant Pot evenly over the pork and toss to combine.  Broil for an additional 5 minutes to get the meat even more crispy. Remove baking sheet from the oven, then ladle the remaining juices over the pork, and toss to combine.\nSprinkle with chopped fresh cilantro, then serve warm in tacos, burritos, salads, or whatever sounds good to you! Or, refrigerate pork in a sealed container for up to 3 days, or freeze for up to 3 months.",
       "ingredients": [
         {
           "id": "mqaepd9evu4g",
@@ -1801,7 +1809,7 @@
     {
       "id": "mqaepd9gb5hi",
       "name": "Instant Pot PotRoast",
-      "notes": "Combine the seasonings (salt, pepper, onion powder, garlic powder, Italian seasoning) in a plate or shallow bowl.\nMeanwhile, set the instant pot to âsauteâ to let it warm up. Roll the roast in the seasonings so that most of the outside of the roast is coated.\nAdd some oil to the pot and add the roast. Sear each side for 30-60 seconds each.\nRemove the roast and add the cut-up white onion and butter. While you sautÃ© the onions, work to deglaze the pan and scrape up those bits of flavor from the bottom.\nWhen the onion is mostly done, add the balsamic vinegar and Worcestershire sauce. Then add 2 cups of beef broth. insert a trivet to the bottom of the pan, and add the roast on top of the trivet.\nNote: cooking the onions along with the beef will make the onions cook down almost to mush. Another option is to remove the onions and set them aside to go back in with the carrots and potatoes.\n\nPut the lid on the instant pot and set it to the âmeat/stewâ setting. Cook for 70 minutes in this setting. (If using a frozen roast or a considerably larger roast, you can cook for 90 minutes, skip the searing step if you are using a frozen roast.)\nDo a natural pressure release (NPR) for at least 20 minutes, then open the lid, add some carrots and potatoes, close the lid and cook for another 8-10 minutes on the manual/high-pressure setting.\nWhen done do a 10 minute NPR.\nRemove the vegetables and meat from the pot, and add a cornstarch slurry of 1/4 cup cold water mixed with 3-4 Tablespoons of cornstarch.\nSeason with salt and pepper to taste. Cook on the sautÃ© setting until the gravy is thickened. Serve the meat, vegetables, and gravy altogether.",
+      "notes": "Combine the seasonings (salt, pepper, onion powder, garlic powder, Italian seasoning) in a plate or shallow bowl.\nMeanwhile, set the instant pot to Ã¢ÂÂsauteÃ¢ÂÂ to let it warm up. Roll the roast in the seasonings so that most of the outside of the roast is coated.\nAdd some oil to the pot and add the roast. Sear each side for 30-60 seconds each.\nRemove the roast and add the cut-up white onion and butter. While you sautÃÂ© the onions, work to deglaze the pan and scrape up those bits of flavor from the bottom.\nWhen the onion is mostly done, add the balsamic vinegar and Worcestershire sauce. Then add 2 cups of beef broth. insert a trivet to the bottom of the pan, and add the roast on top of the trivet.\nNote: cooking the onions along with the beef will make the onions cook down almost to mush. Another option is to remove the onions and set them aside to go back in with the carrots and potatoes.\n\nPut the lid on the instant pot and set it to the Ã¢ÂÂmeat/stewÃ¢ÂÂ setting. Cook for 70 minutes in this setting. (If using a frozen roast or a considerably larger roast, you can cook for 90 minutes, skip the searing step if you are using a frozen roast.)\nDo a natural pressure release (NPR) for at least 20 minutes, then open the lid, add some carrots and potatoes, close the lid and cook for another 8-10 minutes on the manual/high-pressure setting.\nWhen done do a 10 minute NPR.\nRemove the vegetables and meat from the pot, and add a cornstarch slurry of 1/4 cup cold water mixed with 3-4 Tablespoons of cornstarch.\nSeason with salt and pepper to taste. Cook on the sautÃÂ© setting until the gravy is thickened. Serve the meat, vegetables, and gravy altogether.",
       "ingredients": [
         {
           "id": "mqaepd9gfdvm",
@@ -1904,109 +1912,109 @@
           "id": "mqaepd9jwpc6",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 3 links of sweet Italian sausage casings removed (or 1lb)"
+          "name": "Ã¢ÂÂ¢ 3 links of sweet Italian sausage casings removed (or 1lb)"
         },
         {
           "id": "mqaepd9ju55w",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 tablespoon extra virgin olive oil"
+          "name": "Ã¢ÂÂ¢ 1 tablespoon extra virgin olive oil"
         },
         {
           "id": "mqaepd9joyeq",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 cup of chopped onion"
+          "name": "Ã¢ÂÂ¢ 1 cup of chopped onion"
         },
         {
           "id": "mqaepd9jdncm",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2-3 garlic cloves minced"
+          "name": "Ã¢ÂÂ¢ 2-3 garlic cloves minced"
         },
         {
           "id": "mqaepd9jxeg7",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 64 oz chicken broth ( 2 cartons)"
+          "name": "Ã¢ÂÂ¢ 64 oz chicken broth ( 2 cartons)"
         },
         {
           "id": "mqaepd9jc5yh",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 14.5 oz can diced tomatoes do not drain"
+          "name": "Ã¢ÂÂ¢ 14.5 oz can diced tomatoes do not drain"
         },
         {
           "id": "mqaepd9jsvez",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 8 oz can tomato sauce"
+          "name": "Ã¢ÂÂ¢ 8 oz can tomato sauce"
         },
         {
           "id": "mqaepd9jwu9w",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 tablespoon sugar"
+          "name": "Ã¢ÂÂ¢ 1 tablespoon sugar"
         },
         {
           "id": "mqaepd9jwcsy",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 3 shredded carrots"
+          "name": "Ã¢ÂÂ¢ 3 shredded carrots"
         },
         {
           "id": "mqaepd9j4dp2",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 zucchini cut into small chunks"
+          "name": "Ã¢ÂÂ¢ 2 zucchini cut into small chunks"
         },
         {
           "id": "mqaepd9jf4zr",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 bell pepper diced"
+          "name": "Ã¢ÂÂ¢ 1 bell pepper diced"
         },
         {
           "id": "mqaepd9j9093",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 cup fresh spinach leaves stems removed"
+          "name": "Ã¢ÂÂ¢ 1 cup fresh spinach leaves stems removed"
         },
         {
           "id": "mqaepd9jgh50",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 teaspoon dried basil or 4 large basil leaves finely chopped"
+          "name": "Ã¢ÂÂ¢ 1 teaspoon dried basil or 4 large basil leaves finely chopped"
         },
         {
           "id": "mqaepd9jydr2",
           "quantity": "",
           "unit": "",
-          "name": "â¢ Â½ teaspoon dried oregano"
+          "name": "Ã¢ÂÂ¢ ÃÂ½ teaspoon dried oregano"
         },
         {
           "id": "mqaepd9jlkv5",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 teaspoon salt"
+          "name": "Ã¢ÂÂ¢ 1 teaspoon salt"
         },
         {
           "id": "mqaepd9jjjn0",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 teaspoon fresh ground pepper"
+          "name": "Ã¢ÂÂ¢ 1 teaspoon fresh ground pepper"
         },
         {
           "id": "mqaepd9jjkhr",
           "quantity": "",
           "unit": "",
-          "name": "â¢ family size ravioli"
+          "name": "Ã¢ÂÂ¢ family size ravioli"
         },
         {
           "id": "mqaepd9jv84t",
           "quantity": "",
           "unit": "",
-          "name": "â¢ fresh grated Parmesan cheese for topping"
+          "name": "Ã¢ÂÂ¢ fresh grated Parmesan cheese for topping"
         }
       ]
     },
@@ -2019,68 +2027,68 @@
           "id": "mqaepd9lu2q2",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1 pound lean ground beef 90% lean"
+          "name": "Ã¢ÂÂ¢ 1 pound lean ground beef 90% lean"
         },
         {
           "id": "mqaepd9lzlqs",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 3 garlic cloves minced"
+          "name": "Ã¢ÂÂ¢ 3 garlic cloves minced"
         },
         {
           "id": "mqaepd9l9lgj",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1/4 cup packed brown sugar"
+          "name": "Ã¢ÂÂ¢ 1/4 cup packed brown sugar"
         },
         {
           "id": "mqaepd9l5p8t",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1/4 cup reduced-sodium soy sauce"
+          "name": "Ã¢ÂÂ¢ 1/4 cup reduced-sodium soy sauce"
         },
         {
           "id": "mqaepd9lkzf5",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 teaspoons sesame oil"
+          "name": "Ã¢ÂÂ¢ 2 teaspoons sesame oil"
         },
         {
           "id": "mqaepd9l0255",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1/4 teaspoon ground ginger"
+          "name": "Ã¢ÂÂ¢ 1/4 teaspoon ground ginger"
         },
         {
           "id": "mqaepd9l7mz9",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1/4 teaspoon crushed red pepper flakes"
+          "name": "Ã¢ÂÂ¢ 1/4 teaspoon crushed red pepper flakes"
         },
         {
           "id": "mqaepd9ll0kd",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 1/4 teaspoon pepper"
+          "name": "Ã¢ÂÂ¢ 1/4 teaspoon pepper"
         },
         {
           "id": "mqaepd9lxsgp",
           "quantity": "",
           "unit": "",
-          "name": "â¢ 2 cups hot cooked white or brown rice"
+          "name": "Ã¢ÂÂ¢ 2 cups hot cooked white or brown rice"
         },
         {
           "id": "mqaepd9li39x",
           "quantity": "",
           "unit": "",
-          "name": "â¢ sliced green onions and sesame seeds for garnish"
+          "name": "Ã¢ÂÂ¢ sliced green onions and sesame seeds for garnish"
         }
       ]
     },
     {
       "id": "mqaepd9psx34",
       "name": "Lemon Lime Swig Cookies",
-      "notes": "1. Preheat oven to325 convection or 350 regular bake.\n\n2. Take butter out of refrigerator and microwave for about 15 seconds. Place butter, oil, cold sour cream and lime zest in a mixing bowl. Mix for about one minute. Add sugar and almond or vanilla flavoring, mix until smooth. Add all dry ingredients at once. Mix just until flour disappears and the mixture comes together in a ball of dough, less than a minute on very low speed.\n\n3. Spray the cookie scoop with a little cooking spray. Scoop the dough onto a cookie sheet. I use either a 1 3/4 inch or a 2 inch scoop. A two inch scoop will produce a cookie similar in size to the Swig cookie. If you don't have a cookie scoop, roll the dough into a ball about the size of a golf ball.\n\n4. Place about 1/4 cup sugar into a small bowl.\nSpray the bottom of a glass with cooking spray then dip the glass bottom  into granulated sugar. Lightly flatten the cookies with the bottom of the  glass. Press the cookies so they are flattened a bit, twisting the glass as you press to produce a jagged edge.\n\n5. Bake cookies in oven for about 10-12 minutes or until edges are lightly golden and cookies are slightly firm to the touch. Remove from oven, let cool. Place the cookies in the fridge and chill.\nPrepare the frosting: Beat together the butter, sour cream, powdered sugar, lemon juice, zest and salt. When all ingredients are incorporated, add the drop of food coloring and milk if the frosting needs to be thinned. Frost after the cookies are completely chilled.\n\nMakes about 18 large cookies.\n\n---\n\nf you want the cookies to taste more like the Swig cookies make this adjustment to the dough:omit the almond flavoring and reduce the sugar to 1 cup. I prefer the cookies to be a bit sweeter, so I liked 1 1/2 cup of sugar in the dough.\n-I use a microplane grater to grate the zest.\n-The Swig cookie is frosted with quite a thin layer of frosting. I prefer my frosting to be a bit thicker. If you want to frost the cookie with a thinner frosting, add about 3-4 tablespoons of milk to the frosting.\n-This cookie stays quite well in the fridge for two weeks if kept in an air tight container. I almost always have a cookie sheet filled with these in my fridge for emergencies ð They taste as good after two weeks as they do on the day they are made.",
+      "notes": "1. Preheat oven to325 convection or 350 regular bake.\n\n2. Take butter out of refrigerator and microwave for about 15 seconds. Place butter, oil, cold sour cream and lime zest in a mixing bowl. Mix for about one minute. Add sugar and almond or vanilla flavoring, mix until smooth. Add all dry ingredients at once. Mix just until flour disappears and the mixture comes together in a ball of dough, less than a minute on very low speed.\n\n3. Spray the cookie scoop with a little cooking spray. Scoop the dough onto a cookie sheet. I use either a 1 3/4 inch or a 2 inch scoop. A two inch scoop will produce a cookie similar in size to the Swig cookie. If you don't have a cookie scoop, roll the dough into a ball about the size of a golf ball.\n\n4. Place about 1/4 cup sugar into a small bowl.\nSpray the bottom of a glass with cooking spray then dip the glass bottom  into granulated sugar. Lightly flatten the cookies with the bottom of the  glass. Press the cookies so they are flattened a bit, twisting the glass as you press to produce a jagged edge.\n\n5. Bake cookies in oven for about 10-12 minutes or until edges are lightly golden and cookies are slightly firm to the touch. Remove from oven, let cool. Place the cookies in the fridge and chill.\nPrepare the frosting: Beat together the butter, sour cream, powdered sugar, lemon juice, zest and salt. When all ingredients are incorporated, add the drop of food coloring and milk if the frosting needs to be thinned. Frost after the cookies are completely chilled.\n\nMakes about 18 large cookies.\n\n---\n\nf you want the cookies to taste more like the Swig cookies make this adjustment to the dough:omit the almond flavoring and reduce the sugar to 1 cup. I prefer the cookies to be a bit sweeter, so I liked 1 1/2 cup of sugar in the dough.\n-I use a microplane grater to grate the zest.\n-The Swig cookie is frosted with quite a thin layer of frosting. I prefer my frosting to be a bit thicker. If you want to frost the cookie with a thinner frosting, add about 3-4 tablespoons of milk to the frosting.\n-This cookie stays quite well in the fridge for two weeks if kept in an air tight container. I almost always have a cookie sheet filled with these in my fridge for emergencies Ã°ÂÂÂ They taste as good after two weeks as they do on the day they are made.",
       "ingredients": [
         {
           "id": "mqaepd9pq9lj",
@@ -2298,7 +2306,7 @@
     {
       "id": "mqaepd9x8n65",
       "name": "Molasses/ Ginger Spice Cookie",
-      "notes": "1. Preheat oven to 350 and prepare a baking sheet by lining it with parchment paper.\n2. Cream together the butter and brown sugar.\n3. Add the egg and molasses.\n4. In a separate bow combine the flour, cinnamon, ginger, cloves and baking soda. Whisk to combine.\n5. Add half of the dry mixture to the wet. Mix lightly until it is worked in, then add the other half. Donât overmix the dough.\n6. Use a 1/4 cup measuring cup to measure out the dough balls (you should get about 10)\n7. Roll each dough ball in the sugar, then form the dough ball into a top-heavy, almost triangular shaped ball (see picture to the right)\n8. Place 4-6 dough balls on each cookie sheet and bake for 12 minutes.\n9. Let cool completely.",
+      "notes": "1. Preheat oven to 350 and prepare a baking sheet by lining it with parchment paper.\n2. Cream together the butter and brown sugar.\n3. Add the egg and molasses.\n4. In a separate bow combine the flour, cinnamon, ginger, cloves and baking soda. Whisk to combine.\n5. Add half of the dry mixture to the wet. Mix lightly until it is worked in, then add the other half. DonÃ¢ÂÂt overmix the dough.\n6. Use a 1/4 cup measuring cup to measure out the dough balls (you should get about 10)\n7. Roll each dough ball in the sugar, then form the dough ball into a top-heavy, almost triangular shaped ball (see picture to the right)\n8. Place 4-6 dough balls on each cookie sheet and bake for 12 minutes.\n9. Let cool completely.",
       "ingredients": [
         {
           "id": "mqaepd9xxico",
@@ -2365,7 +2373,7 @@
     {
       "id": "mqaepd9yc9k3",
       "name": "NATURAL YEAST SOURDOUGH SANDWICH BREAD",
-      "notes": "Activate your starter by feeding it so you have a total volume of at least 2 cups. When your starter is active, bubbly, and doubled in size after the feed, itâs time to start making the dough. (see sample schedule above) \nIn a large bowl or if using a mixer, combine 2 cups of active bubbly starter with the water, honey, oil, egg and salt. Mix gently to combine. \nAdd the flour one cup at a time, while mixing. When the dough pulls away from the sides of the bowl, is tacky but doesnât stick to your fingers then it has enough flour.\nKnead the dough for 5-15 minutes or until the dough is smooth and elastic. This can be done either by hand on the countertop, or can be done using a bosch mixer or a kitchenaid pro mixer. Note that the dough may need a tad more flour if the dough hydrates while kneading. Go for \"tacky\" dough that's neither overly sticky, or dry. \nCover dough with either plastic or a clean dish towel and let rise until doubled in size. (*you can skip this first rise if needed, but for optimal fermentation and flavor, itâs favorable to keep it*) Note: the dough will rise best between 72 to 75 degrees Fahrenheit. \nWhen the dough has doubled in size, dump it out onto a lightly floured surface and divide in three equal portions. Form into a tight oval and place each in a greased loaf pan. {loaf pan size: 1.5 quarts, 8x4 inches or 9x5 inches} \nCover dough and let rise until doubled a second time. This may take anywhere from 3-12 hours. Be patient and do not bake it unless it has risen! If it doesnât rise then your starter may need some power feeds to strengthen it.\nOnce it has doubled, bake at 375Â° F for 30-35 minutes or until internal temperature reaches 180 degrees. If the tops of your loaves are browning too much, you can lay a flat sheet of aluminum foil on top of the loaves, but add two minutes to the baking time if you cover with foil. \nRemove loaves from the oven, remove loaves from pans and let cool completely, (about one hour) on  a cooling rack before slicing. \nStore in plastic twist tie bags at room temp. Freeze loaves that wonât get eaten in 4-5 days. \nThis bread makes the best sandwiches, and the best toast!",
+      "notes": "Activate your starter by feeding it so you have a total volume of at least 2 cups. When your starter is active, bubbly, and doubled in size after the feed, itÃ¢ÂÂs time to start making the dough. (see sample schedule above) \nIn a large bowl or if using a mixer, combine 2 cups of active bubbly starter with the water, honey, oil, egg and salt. Mix gently to combine. \nAdd the flour one cup at a time, while mixing. When the dough pulls away from the sides of the bowl, is tacky but doesnÃ¢ÂÂt stick to your fingers then it has enough flour.\nKnead the dough for 5-15 minutes or until the dough is smooth and elastic. This can be done either by hand on the countertop, or can be done using a bosch mixer or a kitchenaid pro mixer. Note that the dough may need a tad more flour if the dough hydrates while kneading. Go for \"tacky\" dough that's neither overly sticky, or dry. \nCover dough with either plastic or a clean dish towel and let rise until doubled in size. (*you can skip this first rise if needed, but for optimal fermentation and flavor, itÃ¢ÂÂs favorable to keep it*) Note: the dough will rise best between 72 to 75 degrees Fahrenheit. \nWhen the dough has doubled in size, dump it out onto a lightly floured surface and divide in three equal portions. Form into a tight oval and place each in a greased loaf pan. {loaf pan size: 1.5 quarts, 8x4 inches or 9x5 inches} \nCover dough and let rise until doubled a second time. This may take anywhere from 3-12 hours. Be patient and do not bake it unless it has risen! If it doesnÃ¢ÂÂt rise then your starter may need some power feeds to strengthen it.\nOnce it has doubled, bake at 375ÃÂ° F for 30-35 minutes or until internal temperature reaches 180 degrees. If the tops of your loaves are browning too much, you can lay a flat sheet of aluminum foil on top of the loaves, but add two minutes to the baking time if you cover with foil. \nRemove loaves from the oven, remove loaves from pans and let cool completely, (about one hour) on  a cooling rack before slicing. \nStore in plastic twist tie bags at room temp. Freeze loaves that wonÃ¢ÂÂt get eaten in 4-5 days. \nThis bread makes the best sandwiches, and the best toast!",
       "ingredients": [
         {
           "id": "mqaepd9y43r9",
@@ -2559,7 +2567,7 @@
     {
       "id": "mqaepda5xkoe",
       "name": "Pad Thai",
-      "notes": "Cook noodles according to package instructions, just until tender.  Rinse under cold water.\nMix the sauce ingredients together. Set aside.\nHeat 1Â½ tablespoons of oil in a large saucepan or wok over medium-high heat.\nAdd the shrimp, chicken or tofu, garlic and bell pepper. The shrimp will cook quickly, about 1-2 minutes on each side, or until pink. If using chicken, cook until just cooked through, about 3-4 minutes, flipping only once.\nPush everything to the side of the pan. Add a little more oil and add the beaten eggs. Scramble the eggs, breaking them into small pieces with a spatula as they cook.\nAdd noodles, sauce, bean sprouts and peanuts to the pan (reserving some peanuts for topping at the end). Toss everything to combine.\nTop with green onions, extra peanuts, cilantro and lime wedges. Serve immediately!",
+      "notes": "Cook noodles according to package instructions, just until tender.  Rinse under cold water.\nMix the sauce ingredients together. Set aside.\nHeat 1ÃÂ½ tablespoons of oil in a large saucepan or wok over medium-high heat.\nAdd the shrimp, chicken or tofu, garlic and bell pepper. The shrimp will cook quickly, about 1-2 minutes on each side, or until pink. If using chicken, cook until just cooked through, about 3-4 minutes, flipping only once.\nPush everything to the side of the pan. Add a little more oil and add the beaten eggs. Scramble the eggs, breaking them into small pieces with a spatula as they cook.\nAdd noodles, sauce, bean sprouts and peanuts to the pan (reserving some peanuts for topping at the end). Toss everything to combine.\nTop with green onions, extra peanuts, cilantro and lime wedges. Serve immediately!",
       "ingredients": [
         {
           "id": "mqaepda5o50u",
@@ -2850,50 +2858,50 @@
           "id": "mqaepdaf0tp3",
           "quantity": "",
           "unit": "",
-          "name": "1Â½ Tbsp. poppy seed"
+          "name": "1ÃÂ½ Tbsp. poppy seed"
         },
         {
           "id": "mqaepdafqa5c",
           "quantity": "",
           "unit": "",
-          "name": "Â¾ c. red wine vinegar"
+          "name": "ÃÂ¾ c. red wine vinegar"
         },
         {
           "id": "mqaepdafd7gv",
           "quantity": "",
           "unit": "",
-          "name": "1Â½ c. oil"
+          "name": "1ÃÂ½ c. oil"
         },
         {
           "id": "mqaepdafjq0c",
           "quantity": "",
           "unit": "",
-          "name": "1Â½ Tbsp. grated onion"
+          "name": "1ÃÂ½ Tbsp. grated onion"
         },
         {
           "id": "mqaepdaffexn",
           "quantity": "",
           "unit": "",
-          "name": "1Â½ tsp. salt"
+          "name": "1ÃÂ½ tsp. salt"
         },
         {
           "id": "mqaepdafdytr",
           "quantity": "",
           "unit": "",
-          "name": "Â¾ tsp. dry mustard"
+          "name": "ÃÂ¾ tsp. dry mustard"
         },
         {
           "id": "mqaepdafyqzm",
           "quantity": "",
           "unit": "",
-          "name": "Â½ c. sugar"
+          "name": "ÃÂ½ c. sugar"
         }
       ]
     },
     {
       "id": "mqaepdapzuko",
       "name": "Pumpkin Bread",
-      "notes": "Mix all ingredients\nBake 325 for 1 hr 15 min\nYeilds 3 (8 x 3 3/4ââ x 2 3/8ââ) pan\n\n---\n\n[photo:1]",
+      "notes": "Mix all ingredients\nBake 325 for 1 hr 15 min\nYeilds 3 (8 x 3 3/4Ã¢ÂÂÃ¢ÂÂ x 2 3/8Ã¢ÂÂÃ¢ÂÂ) pan\n\n---\n\n[photo:1]",
       "ingredients": [
         {
           "id": "mqaepdap1zvy",
@@ -3240,7 +3248,7 @@
     {
       "id": "mqaepdb6xev4",
       "name": "Rolls",
-      "notes": "1. Dissolve yeast in warm water with sugar, about 10 min.\n\n2. Then add salt, eggs, butter and mashed potatoes. Mix well.\n\n3. Add the flour one cup at a time. Kneading well in between. You may need anywhere between 6.5-7.5 cups of flour. Donât add too much. Knead for several min until the dough no longer sticks to the side of the bowl and is smooth and elastic. \n\n4. Cover and let rise 1 hour.\n\n5. Then on a countertop dusted with flour, dump dough out. Divide dough in half. Roll each half into a large circle. Using a pizza cutter, cut the dough like a pizza into 16 triangles. (Total of 32 triangles) From the outside in, roll up the dough into a crescent shape. Lay on greased cookie sheet and cover with a clean towel. \n\n6. Let rise 1-2 hours or until doubled in size. \n\n7. Bake at 400 degrees for 12-15 min. Remove when tops are golden brown.",
+      "notes": "1. Dissolve yeast in warm water with sugar, about 10 min.\n\n2. Then add salt, eggs, butter and mashed potatoes. Mix well.\n\n3. Add the flour one cup at a time. Kneading well in between. You may need anywhere between 6.5-7.5 cups of flour. DonÃ¢ÂÂt add too much. Knead for several min until the dough no longer sticks to the side of the bowl and is smooth and elastic. \n\n4. Cover and let rise 1 hour.\n\n5. Then on a countertop dusted with flour, dump dough out. Divide dough in half. Roll each half into a large circle. Using a pizza cutter, cut the dough like a pizza into 16 triangles. (Total of 32 triangles) From the outside in, roll up the dough into a crescent shape. Lay on greased cookie sheet and cover with a clean towel. \n\n6. Let rise 1-2 hours or until doubled in size. \n\n7. Bake at 400 degrees for 12-15 min. Remove when tops are golden brown.",
       "ingredients": [
         {
           "id": "mqaepdb61h20",
@@ -3295,7 +3303,7 @@
     {
       "id": "mqaepdb7ktzf",
       "name": "Snickerdoodle Blondies",
-      "notes": "Preheat the oven to 350Â° F and grease a 9x13 inch baking dish. \n\nWhip butter and brown sugar together for 2 solid minutes, using a handheld or stand mixer. \n \nAdd eggs, vanilla, cinnamon, baking soda, and baking powder. Mix well. \n\nAdd flour and gently mix in.\n\nAdd batter to a prepared baking dish. Spread out as evenly as possible. \n\nCombine the topping ingredients: sugar and cinnamon and mix together, then sprinkle evenly over the top.\n\nBake for 33 minutes, give or take a couple.\nTake out of the oven and resist the urge to dig right in until it has cooled. The edges will have puffed up more than the center. That is perfectly fine. Once it has cooled, it will take on the delicious and chewy texture. Cut into squares and...ENJOY!",
+      "notes": "Preheat the oven to 350ÃÂ° F and grease a 9x13 inch baking dish. \n\nWhip butter and brown sugar together for 2 solid minutes, using a handheld or stand mixer. \n \nAdd eggs, vanilla, cinnamon, baking soda, and baking powder. Mix well. \n\nAdd flour and gently mix in.\n\nAdd batter to a prepared baking dish. Spread out as evenly as possible. \n\nCombine the topping ingredients: sugar and cinnamon and mix together, then sprinkle evenly over the top.\n\nBake for 33 minutes, give or take a couple.\nTake out of the oven and resist the urge to dig right in until it has cooled. The edges will have puffed up more than the center. That is perfectly fine. Once it has cooled, it will take on the delicious and chewy texture. Cut into squares and...ENJOY!",
       "ingredients": [
         {
           "id": "mqaepdb7clg1",
@@ -3374,7 +3382,7 @@
     {
       "id": "mqaepdb9hpp1",
       "name": "Sourdough Dinner Rolls",
-      "notes": "1. Combine water and active sourdough starter. Mix together. Add honey, oil, and salt. Mix.\n\n2. Add the flour cup by cup, then mix. For the last 1/2 cup- only add as much as is needed while kneading. Dough should be tacky but if it is overly sticky then you need more flour. Either use a stand mixer to knead or dump dough onto a clean surface to knead. Knead until dough is supple and smooth and elastic- about 10 minutes.\n\n3. Cover dough and let rise until doubled in size (which could take anywhere between 5 and 10 hours depending on the strength of your starter and the ambient temp.)\n\n4. Dump dough onto clean surface and divide into 15 equal portions. Roll each portion into a smooth ball. Place 15 dough balls in a greased 13x9 inch baking dish. Cover and let rise until doubled in size. (Could take anywhere between 2-5 hours)\n\n5. Bake rolls in a 350 degree oven for approximately 20-22 minutes or until the tops become lightly golden.\n\n6. Brush warm rolls with butter (optional but delicious) and sprinkle with flake salt (also optional but delicious).\n\n---\n\n*note on flour: if using Whole Wheat or Kamut you may need a little less flour- so add as needed.\n*if you are an avid baker of my sourdough sandwich bread, youâll notice there is no egg in this version. Thatâs because itâs not worth using 1/3 of an egg just for this dough. Itâs totally ok without the egg. ð",
+      "notes": "1. Combine water and active sourdough starter. Mix together. Add honey, oil, and salt. Mix.\n\n2. Add the flour cup by cup, then mix. For the last 1/2 cup- only add as much as is needed while kneading. Dough should be tacky but if it is overly sticky then you need more flour. Either use a stand mixer to knead or dump dough onto a clean surface to knead. Knead until dough is supple and smooth and elastic- about 10 minutes.\n\n3. Cover dough and let rise until doubled in size (which could take anywhere between 5 and 10 hours depending on the strength of your starter and the ambient temp.)\n\n4. Dump dough onto clean surface and divide into 15 equal portions. Roll each portion into a smooth ball. Place 15 dough balls in a greased 13x9 inch baking dish. Cover and let rise until doubled in size. (Could take anywhere between 2-5 hours)\n\n5. Bake rolls in a 350 degree oven for approximately 20-22 minutes or until the tops become lightly golden.\n\n6. Brush warm rolls with butter (optional but delicious) and sprinkle with flake salt (also optional but delicious).\n\n---\n\n*note on flour: if using Whole Wheat or Kamut you may need a little less flour- so add as needed.\n*if you are an avid baker of my sourdough sandwich bread, youÃ¢ÂÂll notice there is no egg in this version. ThatÃ¢ÂÂs because itÃ¢ÂÂs not worth using 1/3 of an egg just for this dough. ItÃ¢ÂÂs totally ok without the egg. Ã°ÂÂÂ",
       "ingredients": [
         {
           "id": "mqaepdb9lgqb",
@@ -3417,13 +3425,13 @@
     {
       "id": "mqaepdbb74ai",
       "name": "Sourdough English Muffins",
-      "notes": "Add 100g of the active starter and the rest of the ingredients (except corn meal) to a large bowl and use your hands to mix until well combined. Cover and let rest 30-60 minutes. \n\nTurn the dough out onto a floured surface and knead the dough by hand for 5 minutes. (A stand mixer with a dough hook attachment can be used on the lowest speed.) \n\nPlace the dough back into the bowl, cover and let ferment on the counter at room temperature 8-12 hours. (Room temperature is 65-70Â°F)\n\nTurn the dough out onto a floured surface, flour the top of the dough and press it out using your fingertips until it is 1\" in thickness.\n\nUse a 3\" biscuit cutter to cut rounds and place them on a parchment lined baking sheet that's been sprinkled with cornmeal. Sprinkle the tops with cornmeal, cover with a tea towel and allow to rise for 1 hour at room temperature.\n\nPreheat your non-stick skillet over LOW heat. Place 4 muffins into the skillet spaced 2\" apart, cover and cook the first side for 4 minutes. \n\nTurn the muffins over and cook for an additional 4 minutes. (When done, the center of a muffin should register about 200Â°F on an instant-read thermometer.)",
+      "notes": "Add 100g of the active starter and the rest of the ingredients (except corn meal) to a large bowl and use your hands to mix until well combined. Cover and let rest 30-60 minutes. \n\nTurn the dough out onto a floured surface and knead the dough by hand for 5 minutes. (A stand mixer with a dough hook attachment can be used on the lowest speed.) \n\nPlace the dough back into the bowl, cover and let ferment on the counter at room temperature 8-12 hours. (Room temperature is 65-70ÃÂ°F)\n\nTurn the dough out onto a floured surface, flour the top of the dough and press it out using your fingertips until it is 1\" in thickness.\n\nUse a 3\" biscuit cutter to cut rounds and place them on a parchment lined baking sheet that's been sprinkled with cornmeal. Sprinkle the tops with cornmeal, cover with a tea towel and allow to rise for 1 hour at room temperature.\n\nPreheat your non-stick skillet over LOW heat. Place 4 muffins into the skillet spaced 2\" apart, cover and cook the first side for 4 minutes. \n\nTurn the muffins over and cook for an additional 4 minutes. (When done, the center of a muffin should register about 200ÃÂ°F on an instant-read thermometer.)",
       "ingredients": [
         {
           "id": "mqaepdbb3dlh",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup (100 g) active sourdough starter"
+          "name": "ÃÂ½ cup (100 g) active sourdough starter"
         },
         {
           "id": "mqaepdbbpasl",
@@ -3453,14 +3461,14 @@
           "id": "mqaepdbbxjkx",
           "quantity": "",
           "unit": "",
-          "name": "Â¼ cup (40 g) cornmeal (for sprinkling)"
+          "name": "ÃÂ¼ cup (40 g) cornmeal (for sprinkling)"
         }
       ]
     },
     {
       "id": "mqaepdbc2ng4",
       "name": "Sourdough Loaf",
-      "notes": "Combine water and active starter.     In a large bowl, combine 390 grams of water and 125 grams of the active starter. Mix together until it becomes a milky-looking mixture.\n\nAdd the remaining ingredients and let it rest .     Add 500 grams of flour and 12 grams of salt. Use a danish dough whisk (or your hands) to mix it all together in the bowl. The result will be a very shaggy, unsmooth, sticky mess. Clean off your fingers. Cover the dough and let it rest for 30 minutes.\n\nDo the Stretch and folds.       Come back to the dough and do your first \"stretch and fold\" (see note above). Repeat the stretch and folds every 20 to 30 minutes for a total of 4 times over two hours. You will notice the dough changes considerably in structure and strength with each stretch and fold. Make sure that the dough is covered with a lid in between the stretch and folds. \n\n\nBulk Ferment.      Cover and let bulk ferment at room temperature until the volume of the dough has increased by 50%. This may take 3-6 hours depending on the ambient temperature in your house, and the strength of your sourdough starter. \n\nLaminate.     On a clean surface, dump dough onto countertop. Very gently \"laminate\" the dough. (see note above) To laminate the dough, you gently stretch the dough into a thin, rectangular layer on your countertop. Work carefully to prevent tears in the dough. Try and avoid using flour on your workspace if possible, or use only very minimal flour.\nPreshape.    With the laminated dough, fold 1/3 of the dough inward, then fold the opposite 1/3 side of the dough inward as well. With the triple layer in the center, start at one end and tightly roll it up into a wonky shaped ball. \n\nRest and Laminate again.     Cover the wonky shaped dough ball with either a bowl or a towel and let it rest at room temperature for 30 minutes. then, for a second time, laminate the dough stretching it out as thin as it will go without tearing it. It will not stretch nearly as far or as thin this time as it did in step 7. Repeat the fold method of folding 1/3 toward the center, then the opposite 1/3 toward the center. With the long triple layer, roll it up into another wonky shaped ball. (If you are in a time crunch, step 8 can be completely skipped)\nShape.     Using a minimal dusting of flour, or no flour if possible, use your hands to smooth the wonky shaped ball into a tight, yet smooth ball. Gently pull and turn the dough ball back and forth over the countertop to create tension, being careful that the dough does not overstretch or tear the smooth layer of dough on top of the round. \n\nTransfer to Banneton.     When it is formed into a tight ball, generously dust the top of the dough with flour and spread it onto the top surface of dough using your hand. If you have brown rice flour, (not necessary but helpful since it is less sticky) you can use brown rice flour instead of bread flour. Sprinkle some of the (brown rice or bread) flour on the inside of the banneton basket liner to prevent sticking. Turn the dough ball upside down and place it bottom up into the lined and floured BANNETON BASKET. Cover your banneton basket with a DOUGH SHOWER CAP so it won't dry out.  \n\nCold Proof.     Transfer covered dough to the refrigerator and let it cold proof. A cold proof is helpful for both fermentation, and for ideal oven spring. Eight to Twelve hours is the ideal amount of time, however, I do often let it cold proof for 24 hours when convenience beats out my need for a perfectly fermented loaf. \nPreheat.      Put your DUTCH OVEN inside of your oven with a pizza stone or a cookie sheet underneath it to prevent too crusty of a bottom. (trust me on this don't skip the cookie sheet/pizza stone under the Dutch oven!) Preheat the oven to 450 degrees Fahrenheit. Once it reaches temperature, let it stay at that temperature for at least 30 minutes before putting in the dough. \n\nTransfer to Parchment Paper and Score.      Remove the cold dough from the refrigerator. Using a sheet of PARCHMENT PAPER, empty dough out of banneton so it is right-side-up (floured side up) on the parchment paper. Using a sharp Lame blade, confidently score the top of the dough in a crescent shape, or in whatever shape or design that you like. Scoring not only adds decoration to the top of the loaf, but more importantly it gives the steam somewhere to go, which means it will help the dough lift UP instead of OUT, making a beautiful oven spring. \n\nTransfer to Dutch oven and Bake.      Carefully remove the hot DUTCH OVEN from the oven, open the lid and using the corners of the parchment paper, lift the dough into Dutch oven and put the lid back on. Put it back into the oven and Bake at 450Â° F for 30 minutes. Then remove the lid and bake another 10-15 minutes or until the golden crust has achieved the right color. Remove immediately. \n\nLet Cool.      Set the hot loaf onto a cooling rack and let it cool for at least one hour before slicing into it. (Waiting is the hardest part of the whole process!) If you cut into it early, the still hot tender crumb will tear and turn to mush. I know it's tempting, but trust me. Just wait!",
+      "notes": "Combine water and active starter.     In a large bowl, combine 390 grams of water and 125 grams of the active starter. Mix together until it becomes a milky-looking mixture.\n\nAdd the remaining ingredients and let it rest .     Add 500 grams of flour and 12 grams of salt. Use a danish dough whisk (or your hands) to mix it all together in the bowl. The result will be a very shaggy, unsmooth, sticky mess. Clean off your fingers. Cover the dough and let it rest for 30 minutes.\n\nDo the Stretch and folds.       Come back to the dough and do your first \"stretch and fold\" (see note above). Repeat the stretch and folds every 20 to 30 minutes for a total of 4 times over two hours. You will notice the dough changes considerably in structure and strength with each stretch and fold. Make sure that the dough is covered with a lid in between the stretch and folds. \n\n\nBulk Ferment.      Cover and let bulk ferment at room temperature until the volume of the dough has increased by 50%. This may take 3-6 hours depending on the ambient temperature in your house, and the strength of your sourdough starter. \n\nLaminate.     On a clean surface, dump dough onto countertop. Very gently \"laminate\" the dough. (see note above) To laminate the dough, you gently stretch the dough into a thin, rectangular layer on your countertop. Work carefully to prevent tears in the dough. Try and avoid using flour on your workspace if possible, or use only very minimal flour.\nPreshape.    With the laminated dough, fold 1/3 of the dough inward, then fold the opposite 1/3 side of the dough inward as well. With the triple layer in the center, start at one end and tightly roll it up into a wonky shaped ball. \n\nRest and Laminate again.     Cover the wonky shaped dough ball with either a bowl or a towel and let it rest at room temperature for 30 minutes. then, for a second time, laminate the dough stretching it out as thin as it will go without tearing it. It will not stretch nearly as far or as thin this time as it did in step 7. Repeat the fold method of folding 1/3 toward the center, then the opposite 1/3 toward the center. With the long triple layer, roll it up into another wonky shaped ball. (If you are in a time crunch, step 8 can be completely skipped)\nShape.     Using a minimal dusting of flour, or no flour if possible, use your hands to smooth the wonky shaped ball into a tight, yet smooth ball. Gently pull and turn the dough ball back and forth over the countertop to create tension, being careful that the dough does not overstretch or tear the smooth layer of dough on top of the round. \n\nTransfer to Banneton.     When it is formed into a tight ball, generously dust the top of the dough with flour and spread it onto the top surface of dough using your hand. If you have brown rice flour, (not necessary but helpful since it is less sticky) you can use brown rice flour instead of bread flour. Sprinkle some of the (brown rice or bread) flour on the inside of the banneton basket liner to prevent sticking. Turn the dough ball upside down and place it bottom up into the lined and floured BANNETON BASKET. Cover your banneton basket with a DOUGH SHOWER CAP so it won't dry out.  \n\nCold Proof.     Transfer covered dough to the refrigerator and let it cold proof. A cold proof is helpful for both fermentation, and for ideal oven spring. Eight to Twelve hours is the ideal amount of time, however, I do often let it cold proof for 24 hours when convenience beats out my need for a perfectly fermented loaf. \nPreheat.      Put your DUTCH OVEN inside of your oven with a pizza stone or a cookie sheet underneath it to prevent too crusty of a bottom. (trust me on this don't skip the cookie sheet/pizza stone under the Dutch oven!) Preheat the oven to 450 degrees Fahrenheit. Once it reaches temperature, let it stay at that temperature for at least 30 minutes before putting in the dough. \n\nTransfer to Parchment Paper and Score.      Remove the cold dough from the refrigerator. Using a sheet of PARCHMENT PAPER, empty dough out of banneton so it is right-side-up (floured side up) on the parchment paper. Using a sharp Lame blade, confidently score the top of the dough in a crescent shape, or in whatever shape or design that you like. Scoring not only adds decoration to the top of the loaf, but more importantly it gives the steam somewhere to go, which means it will help the dough lift UP instead of OUT, making a beautiful oven spring. \n\nTransfer to Dutch oven and Bake.      Carefully remove the hot DUTCH OVEN from the oven, open the lid and using the corners of the parchment paper, lift the dough into Dutch oven and put the lid back on. Put it back into the oven and Bake at 450ÃÂ° F for 30 minutes. Then remove the lid and bake another 10-15 minutes or until the golden crust has achieved the right color. Remove immediately. \n\nLet Cool.      Set the hot loaf onto a cooling rack and let it cool for at least one hour before slicing into it. (Waiting is the hardest part of the whole process!) If you cut into it early, the still hot tender crumb will tear and turn to mush. I know it's tempting, but trust me. Just wait!",
       "ingredients": [
         {
           "id": "mqaepdbc8ih9",
@@ -3516,7 +3524,7 @@
     {
       "id": "mqaepdbi6l87",
       "name": "Sweet Potato Casserole",
-      "notes": "1. Preheat oven to 325 degrees and grease a 9x13 inch baking dish\n2. Prepare mashed sweet potatoes\n3. In a large bowl, combine the sweet potatoes, sugar, eggs, butter and vanilla. Best together with an electric mixer until combined.\n4. Empty contents into the baking dish and smooth out the top. \n5. Prepare the streusel topping by combining the brown sugar, flour, butter and chopped nuts. (If you donât do nuts, just skip them! The topping wonât be as crunchy but will still taste amazing) mix well with your fingers then evenly sprinkle over the sweet potatoes. \n6. Bake uncovered at 325 for 30-40 minutes or until a toothpick inserted into the center comes out clean. \nNote: if you notice the top overly browning, you can add some foil for the last ten minutes of baking. \nENJOY! *FAQâs\nQ: CAN THE NUTS BE OMITTED? \nA: yes! Just skip them. Still do the streusel topping just without nuts.\nQ: CAN THIS BE MADE IN ADVANCE?\nA: yes! Prepare it all except for the topping, cover and refrigerate. When itâs game time, let it come to room temp, add the topping and bake.\nQ: CAN THIS BE MADE WITH LESS SUGAR?\nA: sure! You can try it with 1/2 as much sugar. We havenât tested it with pure maple syrup or other sweeteners but if you try it let us know how it turns out.",
+      "notes": "1. Preheat oven to 325 degrees and grease a 9x13 inch baking dish\n2. Prepare mashed sweet potatoes\n3. In a large bowl, combine the sweet potatoes, sugar, eggs, butter and vanilla. Best together with an electric mixer until combined.\n4. Empty contents into the baking dish and smooth out the top. \n5. Prepare the streusel topping by combining the brown sugar, flour, butter and chopped nuts. (If you donÃ¢ÂÂt do nuts, just skip them! The topping wonÃ¢ÂÂt be as crunchy but will still taste amazing) mix well with your fingers then evenly sprinkle over the sweet potatoes. \n6. Bake uncovered at 325 for 30-40 minutes or until a toothpick inserted into the center comes out clean. \nNote: if you notice the top overly browning, you can add some foil for the last ten minutes of baking. \nENJOY! *FAQÃ¢ÂÂs\nQ: CAN THE NUTS BE OMITTED? \nA: yes! Just skip them. Still do the streusel topping just without nuts.\nQ: CAN THIS BE MADE IN ADVANCE?\nA: yes! Prepare it all except for the topping, cover and refrigerate. When itÃ¢ÂÂs game time, let it come to room temp, add the topping and bake.\nQ: CAN THIS BE MADE WITH LESS SUGAR?\nA: sure! You can try it with 1/2 as much sugar. We havenÃ¢ÂÂt tested it with pure maple syrup or other sweeteners but if you try it let us know how it turns out.",
       "ingredients": [
         {
           "id": "mqaepdbidbwj",
@@ -3589,13 +3597,13 @@
     {
       "id": "mqaepdbmzzwo",
       "name": "Thai Red Curry",
-      "notes": "To make the curry, warm a large skillet with deep sides over medium heat. Once itâs hot, add the oil. Add the onion and a sprinkle of salt and cook, stirring often, until the onion has softened and is turning translucent, about 5 minutes. Add the ginger and garlic and cook until fragrant, about 30 seconds, while stirring continuously.\nAdd the bell peppers and carrots. Cook until the bell peppers are fork-tender, 3 to 5 more minutes, stirring occasionally. Then add the curry paste and cook, stirring often, for 2 minutes.\n\nAdd the coconut milk, water, kale and sugar, and stir to combine. Bring the mixture to a simmer over medium heat. Reduce heat as necessary to maintain a gentle simmer and cook until the peppers, carrots and kale have softened to your liking, about 5 to 10 minutes, stirring occasionally.\n\nRemove the pot from the heat and season with tamari and rice vinegar. Add salt (I added Â¼ teaspoon for optimal flavor), to taste. If the curry needs a little more punch, add Â½ teaspoon more tamari, or for more acidity, add Â½ teaspoon more rice vinegar. Divide rice and curry into bowls and garnish with chopped cilantro and a sprinkle of red pepper flakes, if youâd like. If you love spicy curries, serve with sriracha or chili garlic sauce on the side.\n\n---\n\nhttps://cookieandkate.com/thai-red-curry-recipe/",
+      "notes": "To make the curry, warm a large skillet with deep sides over medium heat. Once itÃ¢ÂÂs hot, add the oil. Add the onion and a sprinkle of salt and cook, stirring often, until the onion has softened and is turning translucent, about 5 minutes. Add the ginger and garlic and cook until fragrant, about 30 seconds, while stirring continuously.\nAdd the bell peppers and carrots. Cook until the bell peppers are fork-tender, 3 to 5 more minutes, stirring occasionally. Then add the curry paste and cook, stirring often, for 2 minutes.\n\nAdd the coconut milk, water, kale and sugar, and stir to combine. Bring the mixture to a simmer over medium heat. Reduce heat as necessary to maintain a gentle simmer and cook until the peppers, carrots and kale have softened to your liking, about 5 to 10 minutes, stirring occasionally.\n\nRemove the pot from the heat and season with tamari and rice vinegar. Add salt (I added ÃÂ¼ teaspoon for optimal flavor), to taste. If the curry needs a little more punch, add ÃÂ½ teaspoon more tamari, or for more acidity, add ÃÂ½ teaspoon more rice vinegar. Divide rice and curry into bowls and garnish with chopped cilantro and a sprinkle of red pepper flakes, if youÃ¢ÂÂd like. If you love spicy curries, serve with sriracha or chili garlic sauce on the side.\n\n---\n\nhttps://cookieandkate.com/thai-red-curry-recipe/",
       "ingredients": [
         {
           "id": "mqaepdbmyf90",
           "quantity": "1",
           "unit": "",
-          "name": "Â¼ cups brown jasmine rice or long-grain brown rice, rinsed"
+          "name": "ÃÂ¼ cups brown jasmine rice or long-grain brown rice, rinsed"
         },
         {
           "id": "mqaepdbmwxyo",
@@ -3643,7 +3651,7 @@
           "id": "mqaepdbm6lnc",
           "quantity": "3",
           "unit": "",
-          "name": "carrots, peeled and sliced on the diagonal into Â¼-inch thick rounds (about 1 cup)"
+          "name": "carrots, peeled and sliced on the diagonal into ÃÂ¼-inch thick rounds (about 1 cup)"
         },
         {
           "id": "mqaepdbmm3it",
@@ -3661,19 +3669,19 @@
           "id": "mqaepdbmeff6",
           "quantity": "",
           "unit": "",
-          "name": "Â½ cup water"
+          "name": "ÃÂ½ cup water"
         },
         {
           "id": "mqaepdbmxjzq",
           "quantity": "1",
           "unit": "",
-          "name": "Â½ cups packed thinly sliced kale (tough ribs removed first), preferably the Tuscan/lacinato/dinosaur variety"
+          "name": "ÃÂ½ cups packed thinly sliced kale (tough ribs removed first), preferably the Tuscan/lacinato/dinosaur variety"
         },
         {
           "id": "mqaepdbmjfeh",
           "quantity": "1",
           "unit": "",
-          "name": "Â½ teaspoons coconut sugar or turbinado (raw) sugar or brown sugar"
+          "name": "ÃÂ½ teaspoons coconut sugar or turbinado (raw) sugar or brown sugar"
         },
         {
           "id": "mqaepdbmb8ko",
@@ -3698,7 +3706,7 @@
     {
       "id": "mqaepdboxpwe",
       "name": "Turkey Meatballs",
-      "notes": "PREP\nIf baking: Line a baking sheet with foil for easy cleanup and top with a baking rack; spray the rack with cooking spray.\nIf pan frying: Line the counter next to the stove with parchment paper.\n\nTO MAKE MEATBALLS\nGrate the onion on the largest holes of the grater straight into a large bowl (we want all the juices!) until there is about Â½ cup combined juices/onion. \n\nStir in the remaining ingredients up to the turkey and mix well. Add the turkey and mix with your hands just to combine (donât over-mix or your meatballs will be tough).\n\nWet or lightly spray your hands with cooking spray to prevent the mixture from sticking. \n\nScoop the meat mixture using a 1 Â½ tablespoon cookie scoop (or a heaping 1 tablespoon), then gently roll in between the palms of your hands to form balls; don't compact too much or the meatballs will be dense. Place the meatballs onto the prepared rack or parchment paper without touching.\n\nTO BAKE THE MEATBALLS\nLightly brush the meatballs with olive oil or spray with cooking oil.\n\nTransfer the baking sheet to the oven and bake at 400 degrees F for 16-21 minutes, or until the meatballs are cooked through (reach an internal temperature of 160 degrees F on an instant read thermometer then allowed to rest for 5 minutes to reach 165 degrees F). \n\nBroil for a minute or so if desired for some extra color.",
+      "notes": "PREP\nIf baking: Line a baking sheet with foil for easy cleanup and top with a baking rack; spray the rack with cooking spray.\nIf pan frying: Line the counter next to the stove with parchment paper.\n\nTO MAKE MEATBALLS\nGrate the onion on the largest holes of the grater straight into a large bowl (we want all the juices!) until there is about ÃÂ½ cup combined juices/onion. \n\nStir in the remaining ingredients up to the turkey and mix well. Add the turkey and mix with your hands just to combine (donÃ¢ÂÂt over-mix or your meatballs will be tough).\n\nWet or lightly spray your hands with cooking spray to prevent the mixture from sticking. \n\nScoop the meat mixture using a 1 ÃÂ½ tablespoon cookie scoop (or a heaping 1 tablespoon), then gently roll in between the palms of your hands to form balls; don't compact too much or the meatballs will be dense. Place the meatballs onto the prepared rack or parchment paper without touching.\n\nTO BAKE THE MEATBALLS\nLightly brush the meatballs with olive oil or spray with cooking oil.\n\nTransfer the baking sheet to the oven and bake at 400 degrees F for 16-21 minutes, or until the meatballs are cooked through (reach an internal temperature of 160 degrees F on an instant read thermometer then allowed to rest for 5 minutes to reach 165 degrees F). \n\nBroil for a minute or so if desired for some extra color.",
       "ingredients": [
         {
           "id": "mqaepdbodr28",
@@ -3734,7 +3742,7 @@
           "id": "mqaepdbo3l57",
           "quantity": "3",
           "unit": "cloves",
-          "name": "garlic, minced (may sub Â¾ tsp garlic powder)"
+          "name": "garlic, minced (may sub ÃÂ¾ tsp garlic powder)"
         },
         {
           "id": "mqaepdboddbt",
@@ -3752,7 +3760,7 @@
           "id": "mqaepdbojeoh",
           "quantity": "1",
           "unit": "tablespoon",
-          "name": "chopped fresh rosemary, or Â½ tsp dried, lightly crushed"
+          "name": "chopped fresh rosemary, or ÃÂ½ tsp dried, lightly crushed"
         },
         {
           "id": "mqaepdbodq2z",
@@ -3904,7 +3912,7 @@
     {
       "id": "mqaepdbwmoss",
       "name": "White Bread",
-      "notes": "For bread loaves use 3, 1/5-quart loaf pans or pans that measure 4x8 or 5x9.\nCombine water, yeast, and sugar. Mix gently. Cover and let the yeast proof for ten minutes. If yeast does not foam up then do not move forward, start again with new yeast.\nAdd salt, egg, and oil. Mix to combine.\nAdd flour, cup by cup mixing in between each addition. You have enough flour when 1- the dough starts to pull away from the sides of the bowl, 2- the dough becomes tacky but not overly sticky in texture. Use the touch test (below) to determine if the dough has the right amount of flour. If it doesnât have enough, add a little flour and knead. If it has too much flour, add a teaspoon of oil and knead. Do not add too much flour!\nTouch test: after kneading the dough, touch it with 3 fingers. If a lot of dough sticks to your fingers, it needs more flour. If hardly any sticks to your fingers itâs just right. If it is dry and crumbly with pockets of visible flour, it has too much flour. Kneading the dough for a few extra minutes can help hydrate any excess flour.\nKnead the dough for 10-15 minutes. Cover with a clean kitchen towel or with a bowl lid or with plastic wrap. Let rise until it has doubled in size (about one hour).\nPunch down dough and dump onto a clean, floured surface. Divide into portions of either 3 loaves, 9 mini loaves, or 24-32 rolls. Form into the desired shape, and set on a greased cookie or greased loaf pan and cover with plastic wrap, a lid, or a clean dish towel. Allow to rise again until doubled in size. Preheat oven to 375Â° F for bread or 350Â° F for rolls.\nBake. - 3 large loaves bake at 375Â° F for 25-30 minutes or until the thermometer reads 180Â° F at the center of the loaf. - 9 mini loaves bake at 375Â° F for 22-25 minutes or until the thermometer reads 180Â° F at the center of the loaf.- 32 rolls (16 per cookie sheet) bake at 350Â° F for 17-20 minutes.- 24 rolls (12 per cookie sheet) bake at 350Â° F for 17-20 min\nRemove from oven and let cool. Remove bread from bread pans and onto a cooling rack immediately so they donât condensate and get soggy. Spread tops with melted butter if you want.\nLet bread/ rolls cool completely, then they can be stored in TWIST TIE BREAD STORAGE BAGS.* They will last well at room temperature for 4-5 days, but remember that they do not have any preservatives in them so they may start to mold around day 7. I recommend freezing whatever won't be used within 4-5 days.",
+      "notes": "For bread loaves use 3, 1/5-quart loaf pans or pans that measure 4x8 or 5x9.\nCombine water, yeast, and sugar. Mix gently. Cover and let the yeast proof for ten minutes. If yeast does not foam up then do not move forward, start again with new yeast.\nAdd salt, egg, and oil. Mix to combine.\nAdd flour, cup by cup mixing in between each addition. You have enough flour when 1- the dough starts to pull away from the sides of the bowl, 2- the dough becomes tacky but not overly sticky in texture. Use the touch test (below) to determine if the dough has the right amount of flour. If it doesnÃ¢ÂÂt have enough, add a little flour and knead. If it has too much flour, add a teaspoon of oil and knead. Do not add too much flour!\nTouch test: after kneading the dough, touch it with 3 fingers. If a lot of dough sticks to your fingers, it needs more flour. If hardly any sticks to your fingers itÃ¢ÂÂs just right. If it is dry and crumbly with pockets of visible flour, it has too much flour. Kneading the dough for a few extra minutes can help hydrate any excess flour.\nKnead the dough for 10-15 minutes. Cover with a clean kitchen towel or with a bowl lid or with plastic wrap. Let rise until it has doubled in size (about one hour).\nPunch down dough and dump onto a clean, floured surface. Divide into portions of either 3 loaves, 9 mini loaves, or 24-32 rolls. Form into the desired shape, and set on a greased cookie or greased loaf pan and cover with plastic wrap, a lid, or a clean dish towel. Allow to rise again until doubled in size. Preheat oven to 375ÃÂ° F for bread or 350ÃÂ° F for rolls.\nBake. - 3 large loaves bake at 375ÃÂ° F for 25-30 minutes or until the thermometer reads 180ÃÂ° F at the center of the loaf. - 9 mini loaves bake at 375ÃÂ° F for 22-25 minutes or until the thermometer reads 180ÃÂ° F at the center of the loaf.- 32 rolls (16 per cookie sheet) bake at 350ÃÂ° F for 17-20 minutes.- 24 rolls (12 per cookie sheet) bake at 350ÃÂ° F for 17-20 min\nRemove from oven and let cool. Remove bread from bread pans and onto a cooling rack immediately so they donÃ¢ÂÂt condensate and get soggy. Spread tops with melted butter if you want.\nLet bread/ rolls cool completely, then they can be stored in TWIST TIE BREAD STORAGE BAGS.* They will last well at room temperature for 4-5 days, but remember that they do not have any preservatives in them so they may start to mold around day 7. I recommend freezing whatever won't be used within 4-5 days.",
       "ingredients": [
         {
           "id": "mqaepdbwoltt",
