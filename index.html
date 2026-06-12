@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Meal Planner">
+<meta name="theme-color" content="#c4663a">
+<title>Meal Planner</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+:root {
+  --cream: #fdf6ec;
+  --warm-white: #fff8f0;
+  --terracotta: #c4663a;
+  --terra-light: #e8a87c;
+  --brown: #8b4513;
+  --brown-dark: #3d2b1f;
+  --brown-mid: #6b3a1f;
+  --brown-light: #a0785a;
+  --border: #ddd0c0;
+  --shadow: rgba(62,43,31,0.1);
+  --green: #4a7c59;
+  --green-bg: #e8f5ee;
+  --tab-h: 64px;
+  --hdr-h: 56px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--cream);color:var(--brown-dark);min-height:100vh;padding-bottom:var(--tab-h);}
+
+/* ── Header ── */
+.hdr{position:fixed;top:0;left:0;right:0;height:var(--hdr-h);background:var(--terracotta);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:100;box-shadow:0 2px 8px var(--shadow);}
+.hdr h1{font-size:19px;font-weight:700;}
+.hdr-btn{background:rgba(255,255,255,.2);border:none;color:#fff;width:38px;height:38px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;}
+.hdr-btn:active{background:rgba(255,255,255,.35);}
+
+/* ── Tabs ── */
+.tabs{position:fixed;bottom:0;left:0;right:0;height:var(--tab-h);background:var(--warm-white);border-top:1px solid var(--border);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom,0);}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;color:var(--brown-light);font-size:10px;font-weight:600;border:none;background:none;-webkit-tap-highlight-color:transparent;transition:color .15s;}
+.tab.active{color:var(--terracotta);}
+.tab-icon{font-size:22px;line-height:1;}
+
+/* ── Content ── */
+.content{margin-top:var(--hdr-h);padding:14px;min-height:calc(100vh - var(--hdr-h) - var(--tab-h));}
+
+/* ── Cards ── */
+.card{background:var(--warm-white);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 4px var(--shadow);}
+.card-title{font-size:17px;font-weight:700;color:var(--brown-dark);}
+.card-sub{font-size:13px;color:var(--brown-light);margin-top:3px;}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 18px;border-radius:10px;border:none;font-size:15px;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:opacity .15s;}
+.btn:active{opacity:.72;}
+.btn-primary{background:var(--terracotta);color:#fff;}
+.btn-secondary{background:var(--border);color:var(--brown-dark);}
+.btn-danger{background:#c53030;color:#fff;}
+.btn-ghost{background:transparent;color:var(--terracotta);padding:6px 10px;}
+.btn-full{width:100%;}
+
+/* ── FAB ── */
+.fab{position:fixed;bottom:calc(var(--tab-h) + 16px);right:16px;width:56px;height:56px;border-radius:50%;background:var(--terracotta);color:#fff;border:none;font-size:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(196,102,58,.45);z-index:90;-webkit-tap-highlight-color:transparent;}
+.fab:active{transform:scale(.93);}
+
+/* ── Forms ── */
+.fg{margin-bottom:14px;}
+label{display:block;font-size:12px;font-weight:700;color:var(--brown);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
+input,textarea,select{width:100%;padding:12px 13px;border:1.5px solid var(--border);border-radius:10px;font-size:16px;background:#fff;color:var(--brown-dark);outline:none;-webkit-appearance:none;font-family:inherit;}
+input:focus,textarea:focus{border-color:var(--terracotta);}
+textarea{min-height:80px;resize:vertical;}
+.row2{display:flex;gap:10px;}
+.row2 .fg{flex:1;margin-bottom:0;}
+
+/* ── Modal ── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:flex-end;}
+.overlay.hidden{display:none;}
+.modal{background:var(--warm-white);border-radius:20px 20px 0 0;padding:16px 18px calc(20px + env(safe-area-inset-bottom,0));width:100%;max-height:92vh;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.modal-handle{width:38px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 14px;}
+.modal-title{font-size:20px;font-weight:700;color:var(--brown-dark);margin-bottom:18px;}
+.modal-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
+.modal-row .modal-title{margin-bottom:0;}
+.modal-actions{display:flex;gap:10px;margin-top:18px;}
+.modal-actions .btn{flex:1;}
+
+/* ── Ingredient rows (inside recipe view) ── */
+.ing-row{display:flex;align-items:center;gap:8px;padding:11px 0;border-bottom:1px solid var(--border);}
+.ing-row:last-child{border-bottom:none;}
+.ing-name{flex:1;font-size:15px;font-weight:500;}
+.ing-qty{font-size:13px;color:var(--brown-light);white-space:nowrap;}
+.ing-link{font-size:19px;text-decoration:none;}
+.ing-btn{background:none;border:none;font-size:18px;cursor:pointer;padding:4px;-webkit-tap-highlight-color:transparent;}
+
+/* ── Week plan ── */
+.week-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--border);cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.week-row:last-child{border-bottom:none;}
+.wk-check{width:26px;height:26px;border-radius:7px;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .15s;}
+.wk-check.on{background:var(--terracotta);border-color:var(--terracotta);color:#fff;}
+.wk-name{flex:1;font-size:16px;font-weight:500;}
+
+/* ── Shopping list ── */
+.shop-item{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);}
+.shop-item:last-child{border-bottom:none;}
+.shop-cb{width:26px;height:26px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;font-size:14px;}
+.shop-cb.on{background:var(--green);border-color:var(--green);color:#fff;}
+.shop-info{flex:1;min-width:0;}
+.shop-name{font-size:16px;font-weight:500;}
+.shop-item.done .shop-name{text-decoration:line-through;color:var(--brown-light);}
+.shop-qty{font-size:13px;color:var(--brown-light);}
+.pantry-btn{background:none;border:none;font-size:19px;cursor:pointer;padding:3px;opacity:.45;-webkit-tap-highlight-color:transparent;}
+.pantry-btn.on{opacity:1;}
+.shop-link{font-size:20px;text-decoration:none;}
+.pantry-tag{font-size:11px;background:#fff3cd;color:#7d5a00;padding:1px 6px;border-radius:4px;border:1px solid #e6c000;margin-left:4px;vertical-align:middle;}
+
+/* ── Section label ── */
+.sec-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--brown-light);margin:14px 0 6px;}
+
+/* ── Settings ── */
+.set-block{background:var(--warm-white);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:14px;}
+.set-block h3{font-size:16px;font-weight:700;margin-bottom:12px;}
+.status-bar{display:flex;align-items:center;gap:8px;padding:10px 13px;border-radius:8px;font-size:14px;font-weight:600;margin-bottom:12px;}
+.status-bar.ok{background:var(--green-bg);color:var(--green);}
+.status-bar.warn{background:#fff3cd;color:#7d5a00;}
+
+/* ── Toast ── */
+.toast{position:fixed;bottom:calc(var(--tab-h) + 74px);left:50%;transform:translateX(-50%);background:var(--brown-dark);color:#fff;padding:10px 22px;border-radius:20px;font-size:14px;z-index:400;opacity:0;transition:opacity .25s;white-space:nowrap;pointer-events:none;}
+.toast.show{opacity:1;}
+
+/* ── Empty ── */
+.empty{text-align:center;padding:52px 24px;color:var(--brown-light);}
+.empty-icon{font-size:52px;margin-bottom:12px;}
+.empty p{font-size:16px;line-height:1.5;}
+
+/* ── Loading ── */
+.loading{text-align:center;padding:52px;color:var(--brown-light);font-size:16px;}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <span style="width:38px"></span>
+  <h1 id="hdr-title">My Recipes</h1>
+  <button class="hdr-btn" id="hdr-btn" style="display:none" onclick="hdrAction()">+</button>
+</div>
+
+<div class="content" id="content">
+  <div class="loading">Loading your meal planner…</div>
+</div>
+
+<button class="fab" id="fab" style="display:none" onclick="fabAction()">+</button>
+
+<div class="tabs">
+  <button class="tab active" data-view="recipes" onclick="switchView('recipes')">
+    <span class="tab-icon">📋</span><span>Recipes</span>
+  </button>
+  <button class="tab" data-view="week" onclick="switchView('week')">
+    <span class="tab-icon">📅</span><span>This Week</span>
+  </button>
+  <button class="tab" data-view="shopping" onclick="switchView('shopping')">
+    <span class="tab-icon">🛒</span><span>Shopping</span>
+  </button>
+  <button class="tab" data-view="settings" onclick="switchView('settings')">
+    <span class="tab-icon">⚙️</span><span>Settings</span>
+  </button>
+</div>
+
+<!-- Recipe add/edit modal -->
+<div class="overlay hidden" id="recipe-overlay">
+  <div class="modal" id="recipe-modal">
+    <div class="modal-handle"></div>
+    <div class="modal-title" id="recipe-modal-title">Add Recipe</div>
+    <div class="fg"><label>Recipe Name</label>
+      <input type="text" id="r-name" placeholder="e.g. Chicken Tacos"></div>
+    <div class="fg"><label>Notes / Instructions (optional)</label>
+      <textarea id="r-notes" placeholder="e.g. Marinate 30 min before cooking…"></textarea></div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" onclick="closeModal('recipe-overlay')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveRecipe()">Save</button>
+    </div>
+    <div id="recipe-del-zone" style="margin-top:10px;display:none">
+      <button class="btn btn-danger btn-full" onclick="deleteRecipe()">Delete Recipe</button>
+    </div>
+  </div>
+</div>
+
+<!-- Recipe view modal (ingredients) -->
+<div class="overlay hidden" id="view-overlay" onclick="overlayTap(event,'view-overlay')">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-row">
+      <div class="modal-title" id="view-title"></div>
+      <button class="btn btn-ghost" onclick="editCurrentRecipe()">Edit</button>
+    </div>
+    <div id="view-notes" style="font-size:14px;color:var(--brown-light);margin-bottom:12px;white-space:pre-wrap;display:none"></div>
+    <div class="sec-lbl">Ingredients</div>
+    <div id="view-ings"></div>
+    <button class="btn btn-primary btn-full" style="margin-top:14px" onclick="openIngModal(null)">+ Add Ingredient</button>
+  </div>
+</div>
+
+<!-- Ingredient add/edit modal -->
+<div class="overlay hidden" id="ing-overlay">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-title" id="ing-modal-title">Add Ingredient</div>
+    <div class="fg"><label>Ingredient Name</label>
+      <input type="text" id="i-name" placeholder="e.g. chicken breast"></div>
+    <div class="row2">
+      <div class="fg"><label>Amount</label>
+        <input type="text" id="i-qty" placeholder="e.g. 2, 1/2"></div>
+      <div class="fg"><label>Unit</label>
+        <input type="text" id="i-unit" placeholder="e.g. lbs, cups"></div>
+    </div>
+    <div class="fg" style="margin-top:14px">
+      <label>Walmart Link (optional)</label>
+      <div style="font-size:12px;color:var(--brown-light);margin-bottom:6px">Paste the exact Walmart.com product URL for this item.</div>
+      <input type="url" id="i-walmart" placeholder="https://www.walmart.com/ip/…">
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" onclick="closeIngModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveIng()">Save</button>
+    </div>
+    <div id="ing-del-zone" style="margin-top:10px;display:none">
+      <button class="btn btn-danger btn-full" onclick="deleteIng()">Remove Ingredient</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── Config ──────────────────────────────────────────────────
+const OWNER = 'justintrich94', REPO = 'meal-planner', FILE = 'data.json', BRANCH = 'main';
+
+// ── State ────────────────────────────────────────────────────
+const S = {
+  data: { recipes:[], ingredientLinks:{}, weekPlan:{recipeIds:[]}, pantryStaples:[], checkedItems:[] },
+  sha: null,
+  token: localStorage.getItem('mp_token') || '',
+  view: 'recipes',
+  viewId: null,   // recipe being viewed
+  editId: null,   // recipe being edited
+  ingId: null,    // ingredient being edited
+  saving: false,
+  saveQueued: false,
+};
+
+// ── Utilities ────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+const key = name => (name||'').trim().toLowerCase();
+
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
+
+function toast(msg, ms=2400){
+  const t=$('toast'); t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), ms);
+}
+
+// ── Quantity math ─────────────────────────────────────────────
+function parseQty(s){
+  if(!s) return null;
+  s=s.trim();
+  let m=s.match(/^(\d+)\s+(\d+)\/(\d+)$/);
+  if(m) return +m[1]+ +m[2]/+m[3];
+  m=s.match(/^(\d+)\/(\d+)$/);
+  if(m) return +m[1]/+m[2];
+  const n=parseFloat(s);
+  return isNaN(n)?null:n;
+}
+
+function fmtQty(n){
+  const fracs=[[.25,'1/4'],[1/3,'1/3'],[.5,'1/2'],[2/3,'2/3'],[.75,'3/4']];
+  const w=Math.floor(n), f=n-w;
+  if(f<.01) return String(w);
+  for(const [d,s] of fracs) if(Math.abs(f-d)<.04) return w?`${w} ${s}`:s;
+  return (Math.round(n*100)/100).toString();
+}
+
+const unitNorm = {
+  cups:'cup',cup:'cup',tbsp:'tbsp',tablespoon:'tbsp',tablespoons:'tbsp',
+  tsp:'tsp',teaspoon:'tsp',teaspoons:'tsp',
+  oz:'oz',ounce:'oz',ounces:'oz',lb:'lb',lbs:'lb',pound:'lb',pounds:'lb',
+  g:'g',gram:'g',grams:'g',kg:'kg',kilogram:'kg',kilograms:'kg',
+  ml:'ml',milliliter:'ml',milliliters:'ml',l:'l',liter:'l',liters:'l',
+  clove:'clove',cloves:'clove',can:'can',cans:'can',
+  slice:'slice',slices:'slice',piece:'piece',pieces:'piece',
+  pinch:'pinch',dash:'dash',handful:'handful',
+};
+const unitPlural = {cup:'cups',clove:'cloves',can:'cans',slice:'slices',piece:'pieces',handful:'handfuls',lb:'lbs'};
+
+function normUnit(u){ return u ? (unitNorm[(u||'').trim().toLowerCase()] || (u||'').trim().toLowerCase()) : ''; }
+function dispUnit(u,n){ return (n>1 && unitPlural[u]) ? unitPlural[u] : u; }
+
+function getShoppingList(){
+  const {recipes,weekPlan,ingredientLinks,pantryStaples,checkedItems} = S.data;
+  const selected = recipes.filter(r=>weekPlan.recipeIds.includes(r.id));
+  const acc={};
+  for(const recipe of selected){
+    for(const ing of (recipe.ingredients||[])){
+      const nm=ing.name.trim(), normNm=key(nm);
+      const nu=normUnit(ing.unit||'');
+      const k=`${normNm}||${nu}`;
+      const qty=parseQty(ing.quantity||'');
+      if(!acc[k]) acc[k]={name:nm,normNm,unit:nu,total:0,numeric:true,rawParts:[]};
+      if(qty!==null){ acc[k].total+=qty; acc[k].rawParts.push(`${fmtQty(qty)}${nu?' '+nu:''}`); }
+      else { acc[k].numeric=false; acc[k].rawParts.push(`${ing.quantity||''}${nu?' '+nu:''}`); }
+    }
+  }
+  return Object.entries(acc).map(([k,v])=>{
+    const wUrl=ingredientLinks[v.normNm]||null;
+    const isPantry=pantryStaples.includes(v.normNm);
+    const isChecked=checkedItems.includes(k);
+    let dQty;
+    if(v.numeric && v.rawParts.length){
+      dQty=fmtQty(v.total)+(v.unit?' '+dispUnit(v.unit,v.total):'');
+    } else {
+      dQty=v.rawParts.join(' + ');
+    }
+    return {k,name:v.name,normNm:v.normNm,dQty,wUrl,isPantry,isChecked};
+  });
+}
+
+// ── GitHub API ───────────────────────────────────────────────
+async function ghGet(path){
+  const h={'Accept':'application/vnd.github.v3+json'};
+  if(S.token) h['Authorization']=`token ${S.token}`;
+  return fetch(`https://api.github.com/repos/${OWNER}/${REPO}/${path}`,{headers:h});
+}
+async function ghPut(path,body){
+  const h={'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'};
+  if(S.token) h['Authorization']=`token ${S.token}`;
+  return fetch(`https://api.github.com/repos/${OWNER}/${REPO}/${path}`,{method:'PUT',headers:h,body:JSON.stringify(body)});
+}
+
+async function loadData(){
+  try{
+    const r=await ghGet(`contents/${FILE}?ref=${BRANCH}`);
+    if(r.status===404) return; // start fresh
+    if(!r.ok) throw new Error(r.status);
+    const j=await r.json();
+    S.sha=j.sha;
+    const parsed=JSON.parse(atob(j.content.replace(/\n/g,'')));
+    S.data={...S.data,...parsed};
+  } catch(e){ console.warn('Load:',e); toast('Could not load data — check Settings'); }
+}
+
+async function saveData(){
+  if(!S.token){ toast('⚠️ Add a GitHub token in Settings to save'); return false; }
+  const content=btoa(unescape(encodeURIComponent(JSON.stringify(S.data,null,2))));
+  const body={message:'Update meal plan data',content,branch:BRANCH};
+  if(S.sha) body.sha=S.sha;
+  try{
+    const r=await ghPut(`contents/${FILE}`,body);
+    if(r.status===409){ await loadData(); return saveData(); } // SHA conflict — reload & retry
+    if(!r.ok){ const e=await r.json(); throw new Error(e.message||r.status); }
+    const j=await r.json();
+    S.sha=j.content.sha;
+    return true;
+  } catch(e){ console.error('Save:',e); toast('Save failed: '+e.message); return false; }
+}
+
+let _saveTimer=null;
+async function scheduleSave(){
+  if(_saveTimer) clearTimeout(_saveTimer);
+  _saveTimer=setTimeout(async()=>{
+    _saveTimer=null;
+    if(S.saving){ scheduleSave(); return; }
+    S.saving=true;
+    const ok=await saveData();
+    S.saving=false;
+    if(ok) toast('✓ Saved');
+  },900);
+}
+
+// ── Navigation ───────────────────────────────────────────────
+const TITLES={recipes:'My Recipes',week:'This Week',shopping:'Shopping List',settings:'Settings'};
+
+function switchView(v){
+  S.view=v;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.view===v));
+  $('hdr-title').textContent=TITLES[v];
+  render();
+}
+
+function render(){
+  const fab=$('fab'), btn=$('hdr-btn');
+  fab.style.display='none'; btn.style.display='none';
+  if(S.view==='recipes'){ fab.style.display='flex'; renderRecipes(); }
+  else if(S.view==='week') renderWeek();
+  else if(S.view==='shopping') renderShopping();
+  else renderSettings();
+}
+
+function fabAction(){ if(S.view==='recipes') openRecipeModal(null); }
+function hdrAction(){}
+
+// ── Recipes view ──────────────────────────────────────────────
+function renderRecipes(){
+  const {recipes,weekPlan}=S.data, c=$('content');
+  if(!recipes.length){
+    c.innerHTML=`<div class="empty"><div class="empty-icon">🍳</div><p>No recipes yet.<br>Tap + to add your first one!</p></div>`;
+    return;
+  }
+  c.innerHTML=recipes.map(r=>{
+    const n=(r.ingredients||[]).length;
+    const inWeek=weekPlan.recipeIds.includes(r.id);
+    return `<div class="card" style="cursor:pointer" onclick="openViewModal('${r.id}')">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div class="card-title">${esc(r.name)}</div>
+        ${inWeek?'<span style="font-size:12px;color:var(--terracotta);font-weight:600">📅 This Week</span>':''}
+      </div>
+      <div class="card-sub">${n} ingredient${n!==1?'s':''}</div>
+      ${r.notes?`<div style="font-size:13px;color:var(--brown-light);margin-top:6px;overflow:hidden;max-height:36px">${esc(r.notes)}</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+// ── Week view ─────────────────────────────────────────────────
+function renderWeek(){
+  const {recipes,weekPlan}=S.data, c=$('content');
+  const sel=weekPlan.recipeIds.length;
+  let html=`<div style="margin-bottom:10px;font-size:14px;color:var(--brown-light)">${sel} recipe${sel!==1?'s':''} planned this week</div>`;
+  if(!recipes.length){
+    html+=`<div class="empty"><div class="empty-icon">📅</div><p>Add recipes first, then plan your week here.</p></div>`;
+  } else {
+    html+=`<div class="card">`+recipes.map(r=>{
+      const on=weekPlan.recipeIds.includes(r.id);
+      return `<div class="week-row" onclick="toggleWeek('${r.id}')">
+        <div class="wk-check ${on?'on':''}">${on?'✓':''}</div>
+        <span class="wk-name">${esc(r.name)}</span>
+        <span style="font-size:12px;color:var(--brown-light)">${(r.ingredients||[]).length} ing.</span>
+      </div>`;
+    }).join('')+`</div>`;
+    if(sel) html+=`<button class="btn btn-secondary btn-full" style="margin-top:6px" onclick="clearWeek()">Clear Week</button>`;
+  }
+  $('content').innerHTML=html;
+}
+
+function toggleWeek(id){
+  const ids=S.data.weekPlan.recipeIds, i=ids.indexOf(id);
+  if(i>=0) ids.splice(i,1); else ids.push(id);
+  renderWeek(); scheduleSave();
+}
+
+function clearWeek(){
+  S.data.weekPlan.recipeIds=[];
+  S.data.checkedItems=[];
+  renderWeek(); scheduleSave();
+}
+
+// ── Shopping view ─────────────────────────────────────────────
+function renderShopping(){
+  const c=$('content');
+  if(!S.data.weekPlan.recipeIds.length){
+    c.innerHTML=`<div class="empty"><div class="empty-icon">🛒</div><p>Select recipes in "This Week"<br>to build your shopping list.</p></div>`;
+    return;
+  }
+  const list=getShoppingList();
+  if(!list.length){
+    c.innerHTML=`<div class="empty"><div class="empty-icon">🛒</div><p>Your selected recipes have no ingredients yet.</p></div>`;
+    return;
+  }
+  const needed=list.filter(i=>!i.isChecked&&!i.isPantry);
+  const pantry=list.filter(i=>!i.isChecked&&i.isPantry);
+  const done=list.filter(i=>i.isChecked);
+  let html='';
+  if(needed.length) html+=`<div class="card">${needed.map(shopRow).join('')}</div>`;
+  if(pantry.length) html+=`<div class="sec-lbl">🏠 Usually Have (Pantry)</div><div class="card">${pantry.map(shopRow).join('')}</div>`;
+  if(done.length){
+    html+=`<div class="sec-lbl">In Cart ✓</div><div class="card">${done.map(shopRow).join('')}</div>`;
+    html+=`<button class="btn btn-secondary btn-full" style="margin-top:6px" onclick="clearCart()">Clear Cart</button>`;
+  }
+  c.innerHTML=html;
+}
+
+function shopRow(item){
+  const linkHtml=item.wUrl
+    ?`<a class="shop-link" href="${esc(item.wUrl)}" target="_blank" rel="noopener" title="Open on Walmart">🔗</a>`
+    :`<button class="shop-link" style="background:none;border:none;cursor:pointer;font-size:14px;color:var(--brown-light)" data-normname="${esc(item.normNm)}" onclick="addWalmartLink(this.dataset.normname)" title="Add Walmart link">+🔗</button>`;
+  return `<div class="shop-item${item.isChecked?' done':''}">
+    <div class="shop-cb${item.isChecked?' on':''}" data-k="${esc(item.k)}" onclick="toggleCart(this.dataset.k)">${item.isChecked?'✓':''}</div>
+    <div class="shop-info">
+      <div class="shop-name">${esc(item.name)}${item.isPantry?'<span class="pantry-tag">pantry</span>':''}</div>
+      <div class="shop-qty">${esc(item.dQty)}</div>
+    </div>
+    <button class="pantry-btn${item.isPantry?' on':''}" data-normname="${esc(item.normNm)}" onclick="togglePantry(this.dataset.normname)" title="${item.isPantry?'Remove pantry flag':'Mark as pantry staple'}">🏠</button>
+    ${linkHtml}
+  </div>`;
+}
+
+function toggleCart(k){
+  const a=S.data.checkedItems, i=a.indexOf(k);
+  if(i>=0) a.splice(i,1); else a.push(k);
+  renderShopping(); scheduleSave();
+}
+
+function clearCart(){
+  S.data.checkedItems=[];
+  renderShopping(); scheduleSave();
+}
+
+function togglePantry(normNm){
+  const a=S.data.pantryStaples, i=a.indexOf(normNm);
+  if(i>=0) a.splice(i,1); else a.push(normNm);
+  renderShopping(); scheduleSave();
+}
+
+function addWalmartLink(normNm){
+  const url=prompt(`Paste the Walmart.com URL for "${normNm}":`);
+  if(url&&url.startsWith('http')){ S.data.ingredientLinks[normNm]=url.trim(); renderShopping(); scheduleSave(); }
+}
+
+// ── Settings view ─────────────────────────────────────────────
+function renderSettings(){
+  const has=!!S.token;
+  $('content').innerHTML=`
+  <div class="set-block">
+    <h3>🔑 GitHub Token</h3>
+    <div class="status-bar ${has?'ok':'warn'}">${has?'✓ Token saved — data will sync to GitHub':'⚠ No token — data cannot be saved'}</div>
+    <div class="fg"><label>Personal Access Token</label>
+      <input type="password" id="tok-inp" value="${has?'••••••••':''}">
+    </div>
+    <button class="btn btn-primary btn-full" onclick="saveToken()">Save Token</button>
+    ${has?`<button class="btn btn-danger btn-full" style="margin-top:8px" onclick="clearToken()">Remove Token</button>`:''}
+    <div style="margin-top:12px;font-size:13px;color:var(--brown-light);line-height:1.6">
+      <strong>How to get a token:</strong><br>
+      1. Go to github.com → your profile photo → Settings<br>
+      2. Scroll to "Developer settings" → "Personal access tokens" → "Tokens (classic)"<br>
+      3. "Generate new token (classic)"<br>
+      4. Give it a name, select the <strong>repo</strong> scope checkbox<br>
+      5. Click "Generate token" and paste it above
+    </div>
+  </div>
+  <div class="set-block">
+    <h3>🏠 Pantry Staples</h3>
+    <div style="font-size:13px;color:var(--brown-light);margin-bottom:10px">You can also tap the 🏠 icon on any shopping list item to toggle pantry status.</div>
+    ${S.data.pantryStaples.length
+      ? S.data.pantryStaples.map(s=>`
+          <div style="display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+            <span style="flex:1">${esc(s)}</span>
+            <button class="btn btn-ghost" style="font-size:13px;padding:4px 10px" data-nm="${esc(s)}" onclick="removePantry(this.dataset.nm)">Remove</button>
+          </div>`).join('')
+      : '<div style="font-size:14px;color:var(--brown-light)">None set yet.</div>'
+    }
+  </div>
+  <div class="set-block">
+    <h3>ℹ️ About</h3>
+    <p style="font-size:13px;color:var(--brown-light);line-height:1.6">
+      Recipes are saved to <strong>data.json</strong> in your GitHub repository (<strong>${OWNER}/${REPO}</strong>).
+      Changes sync automatically after each edit.<br><br>
+      <button class="btn btn-secondary" onclick="reloadData()" style="font-size:13px;padding:8px 14px">↺ Reload from GitHub</button>
+    </p>
+  </div>`;
+}
+
+function saveToken(){
+  const v=$('tok-inp').value.trim();
+  if(!v||v.includes('•')){ toast('Paste your actual token first'); return; }
+  S.token=v; localStorage.setItem('mp_token',v);
+  toast('Token saved!'); renderSettings();
+}
+function clearToken(){
+  S.token=''; localStorage.removeItem('mp_token');
+  toast('Token removed'); renderSettings();
+}
+function removePantry(nm){
+  const i=S.data.pantryStaples.indexOf(nm);
+  if(i>=0) S.data.pantryStaples.splice(i,1);
+  renderSettings(); scheduleSave();
+}
+async function reloadData(){
+  $('content').innerHTML='<div class="loading">Reloading…</div>';
+  await loadData(); render(); toast('✓ Reloaded');
+}
+
+// ── Recipe modal ──────────────────────────────────────────────
+function openRecipeModal(id){
+  S.editId=id;
+  const r=id&&S.data.recipes.find(x=>x.id===id);
+  $('recipe-modal-title').textContent=r?'Edit Recipe':'Add Recipe';
+  $('r-name').value=r?r.name:'';
+  $('r-notes').value=r?(r.notes||''):'';
+  $('recipe-del-zone').style.display=r?'block':'none';
+  $('recipe-overlay').classList.remove('hidden');
+  setTimeout(()=>$('r-name').focus(),300);
+}
+
+function closeModal(id){ $(id).classList.add('hidden'); }
+function overlayTap(e,id){ if(e.target.id===id) closeModal(id); }
+
+function saveRecipe(){
+  const name=$('r-name').value.trim();
+  if(!name){ toast('Please enter a recipe name'); return; }
+  const notes=$('r-notes').value.trim();
+  if(S.editId){
+    const r=S.data.recipes.find(x=>x.id===S.editId);
+    if(r){ r.name=name; r.notes=notes; }
+  } else {
+    S.data.recipes.push({id:uid(),name,notes,ingredients:[]});
+  }
+  closeModal('recipe-overlay');
+  render(); scheduleSave();
+}
+
+function deleteRecipe(){
+  if(!confirm('Delete this recipe?')) return;
+  S.data.recipes=S.data.recipes.filter(r=>r.id!==S.editId);
+  S.data.weekPlan.recipeIds=S.data.weekPlan.recipeIds.filter(id=>id!==S.editId);
+  closeModal('recipe-overlay');
+  closeModal('view-overlay');
+  render(); scheduleSave();
+}
+
+// ── View modal (ingredients) ──────────────────────────────────
+function openViewModal(id){
+  S.viewId=id;
+  const r=S.data.recipes.find(x=>x.id===id);
+  if(!r) return;
+  $('view-title').textContent=r.name;
+  const nd=$('view-notes');
+  if(r.notes){ nd.textContent=r.notes; nd.style.display='block'; } else nd.style.display='none';
+  renderViewIngs();
+  $('view-overlay').classList.remove('hidden');
+}
+
+function renderViewIngs(){
+  const r=S.data.recipes.find(x=>x.id===S.viewId);
+  const ings=r?(r.ingredients||[]):[];
+  const c=$('view-ings');
+  if(!ings.length){ c.innerHTML=`<div style="color:var(--brown-light);font-size:14px;padding:8px 0">No ingredients yet.</div>`; return; }
+  c.innerHTML=ings.map(ing=>{
+    const nm=key(ing.name);
+    const link=S.data.ingredientLinks[nm];
+    const isPantry=S.data.pantryStaples.includes(nm);
+    const qtyStr=[ing.quantity,ing.unit].filter(Boolean).join(' ');
+    return `<div class="ing-row">
+      <div style="flex:1">
+        <span class="ing-name">${esc(ing.name)}</span>
+        ${isPantry?'<span class="pantry-tag" style="margin-left:4px">pantry</span>':''}
+      </div>
+      <span class="ing-qty">${esc(qtyStr)}</span>
+      ${link
+        ?`<a class="ing-link" href="${esc(link)}" target="_blank" rel="noopener" title="Open on Walmart">🔗</a>`
+        :`<span class="ing-link" style="opacity:.3" title="No Walmart link yet">🔗</span>`
+      }
+      <button class="ing-btn" data-ingid="${esc(ing.id)}" onclick="openIngModal(this.dataset.ingid)" title="Edit">✏️</button>
+    </div>`;
+  }).join('');
+}
+
+function editCurrentRecipe(){
+  closeModal('view-overlay');
+  openRecipeModal(S.viewId);
+}
+
+// ── Ingredient modal ──────────────────────────────────────────
+function openIngModal(ingId){
+  S.ingId=ingId;
+  const r=S.data.recipes.find(x=>x.id===S.viewId);
+  const ing=ingId&&r?(r.ingredients||[]).find(i=>i.id===ingId):null;
+  $('ing-modal-title').textContent=ing?'Edit Ingredient':'Add Ingredient';
+  $('i-name').value=ing?ing.name:'';
+  $('i-qty').value=ing?(ing.quantity||''):'';
+  $('i-unit').value=ing?(ing.unit||''):'';
+  const nm=ing?key(ing.name):'';
+  $('i-walmart').value=nm?(S.data.ingredientLinks[nm]||''):'';
+  $('ing-del-zone').style.display=ing?'block':'none';
+  $('ing-overlay').classList.remove('hidden');
+  setTimeout(()=>$('i-name').focus(),300);
+}
+
+function closeIngModal(){
+  closeModal('ing-overlay');
+  renderViewIngs();
+}
+
+function saveIng(){
+  const name=$('i-name').value.trim();
+  if(!name){ toast('Please enter an ingredient name'); return; }
+  const qty=$('i-qty').value.trim();
+  const unit=$('i-unit').value.trim();
+  const wUrl=$('i-walmart').value.trim();
+  const nm=key(name);
+  if(wUrl.startsWith('http')) S.data.ingredientLinks[nm]=wUrl;
+  else if(!wUrl && S.data.ingredientLinks[nm] && S.ingId){
+    // only clear if user deliberately emptied an existing link
+    delete S.data.ingredientLinks[nm];
+  }
+  const r=S.data.recipes.find(x=>x.id===S.viewId);
+  if(!r) return;
+  if(S.ingId){
+    const ing=(r.ingredients||[]).find(i=>i.id===S.ingId);
+    if(ing){ ing.name=name; ing.quantity=qty; ing.unit=unit; }
+  } else {
+    (r.ingredients=r.ingredients||[]).push({id:uid(),name,quantity:qty,unit});
+  }
+  closeIngModal();
+  scheduleSave();
+}
+
+function deleteIng(){
+  const r=S.data.recipes.find(x=>x.id===S.viewId);
+  if(r) r.ingredients=(r.ingredients||[]).filter(i=>i.id!==S.ingId);
+  closeIngModal();
+  scheduleSave();
+}
+
+// ── Init ──────────────────────────────────────────────────────
+(async()=>{
+  await loadData();
+  render();
+})();
+</script>
+</body>
+</html>
