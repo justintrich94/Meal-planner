@@ -10,6 +10,7 @@
 <title>Meal Planner</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <style>
 :root {
   --cream: #fdf6ec;
@@ -227,6 +228,7 @@ textarea{min-height:80px;resize:vertical;}
 </div>
 
 <div class="toast" id="toast"></div>
+<input type="file" id="paprika-file" accept=".paprikarecipes" style="display:none" onchange="handlePaprikaFile(event)">
 
 <script>
 // ── Config ──────────────────────────────────────────────────
@@ -546,6 +548,14 @@ function renderSettings(){
     }
   </div>
   <div class="set-block">
+    <h3>📥 Import from Paprika</h3>
+    <div style="font-size:13px;color:var(--brown-light);margin-bottom:12px;line-height:1.6">
+      In Paprika, go to <strong>Settings → Export Recipes</strong>. This creates a <strong>.paprikarecipes</strong> file — AirDrop or email it to yourself, then select it below.<br><br>
+      Ingredients will be parsed automatically. You can fine-tune any that don't come through perfectly.
+    </div>
+    <button class="btn btn-primary btn-full" onclick="triggerPaprikaImport()">Select .paprikarecipes File</button>
+  </div>
+  <div class="set-block">
     <h3>ℹ️ About</h3>
     <p style="font-size:13px;color:var(--brown-light);line-height:1.6">
       Recipes are saved to <strong>data.json</strong> in your GitHub repository (<strong>${OWNER}/${REPO}</strong>).
@@ -705,6 +715,83 @@ function deleteIng(){
   if(r) r.ingredients=(r.ingredients||[]).filter(i=>i.id!==S.ingId);
   closeIngModal();
   scheduleSave();
+}
+
+// ── Paprika Import ────────────────────────────────────────────
+function triggerPaprikaImport(){
+  $('paprika-file').value='';
+  $('paprika-file').click();
+}
+
+async function gunzip(uint8arr){
+  if(typeof DecompressionStream==='undefined') throw new Error('Your browser does not support this import. Please update iOS and try again.');
+  const ds=new DecompressionStream('gzip');
+  const stream=new Blob([uint8arr]).stream().pipeThrough(ds);
+  const reader=stream.getReader();
+  const chunks=[];
+  while(true){ const {done,value}=await reader.read(); if(done) break; chunks.push(value); }
+  const out=new Uint8Array(chunks.reduce((s,c)=>s+c.length,0));
+  let off=0; for(const c of chunks){ out.set(c,off); off+=c.length; }
+  return new TextDecoder().decode(out);
+}
+
+function parseIngLine(line){
+  line=(line||'').trim().replace(/^[-•*]\s*/,'');
+  if(!line) return null;
+  const U='cups?|tablespoons?|tbsps?\\.?|teaspoons?|tsps?\\.?|ounces?|oz\\.?|pounds?|lbs?\\.?|grams?|g\\.?|kg|ml|milliliters?|liters?|cloves?|cans?|slices?|pieces?|pinch(?:es)?|dash(?:es)?|handfuls?|stalks?|heads?|bunches?|sprigs?|packets?|envelopes?|sticks?|bars?|links?|strips?';
+  const Q='(?:\\d+\\s+)?(?:\\d+\\/\\d+|\\d+\\.\\d+|\\d+)';
+  let m=line.match(new RegExp(`^(${Q})\\s+(${U})\\s+(.+)$`,'i'));
+  if(m) return {id:uid(),quantity:m[1].trim(),unit:m[2].trim(),name:m[3].trim()};
+  m=line.match(/^(\d+(?:\s+\d+\/\d+|\.\d+)?)\s+(.+)$/);
+  if(m) return {id:uid(),quantity:m[1].trim(),unit:'',name:m[2].trim()};
+  return {id:uid(),quantity:'',unit:'',name:line};
+}
+
+async function handlePaprikaFile(event){
+  const file=event.target.files[0];
+  if(!file) return;
+  toast('Reading file…',99999);
+  try{
+    if(typeof JSZip==='undefined') throw new Error('Could not load JSZip — check your internet connection and try again');
+    const zip=await JSZip.loadAsync(await file.arrayBuffer());
+    const entries=Object.values(zip.files).filter(f=>!f.dir&&f.name.endsWith('.paprikarecipe'));
+    if(!entries.length) throw new Error('No recipes found in this file — make sure you exported from Paprika');
+
+    const parsed=[];
+    for(const entry of entries){
+      try{
+        const data=JSON.parse(await gunzip(await entry.async('uint8array')));
+        if(!data.name) continue;
+        const ingredients=(data.ingredients||'').split('\n').map(parseIngLine).filter(i=>i&&i.name);
+        const noteParts=[data.directions,data.notes].filter(s=>(s||'').trim());
+        parsed.push({id:uid(),name:data.name.trim(),notes:noteParts.join('\n\n---\n\n').trim(),ingredients});
+      } catch(e){ console.warn('Skipping one recipe:',e); }
+    }
+    if(!parsed.length) throw new Error('Could not read any recipes — the file may be corrupted');
+
+    const existingNames=new Set(S.data.recipes.map(r=>r.name.toLowerCase()));
+    const fresh=parsed.filter(r=>!existingNames.has(r.name.toLowerCase()));
+    const dupeCount=parsed.length-fresh.length;
+
+    $('toast').classList.remove('show');
+    if(!fresh.length){ toast('All recipes in this file are already imported'); return; }
+
+    let msg=`Found ${parsed.length} recipe${parsed.length!==1?'s':''}`;
+    if(dupeCount) msg+=` — ${dupeCount} already exist and will be skipped`;
+    msg+=`.\n\nImport ${fresh.length} new recipe${fresh.length!==1?'s':''}?`;
+    if(!confirm(msg)) return;
+
+    S.data.recipes.push(...fresh);
+    render();
+    toast('Saving to GitHub…',99999);
+    const ok=await saveData();
+    $('toast').classList.remove('show');
+    if(ok) toast(`✓ Imported ${fresh.length} recipe${fresh.length!==1?'s':''}`);
+  } catch(e){
+    $('toast').classList.remove('show');
+    console.error('Import error:',e);
+    toast('Import failed: '+e.message,5000);
+  }
 }
 
 // ── Init ──────────────────────────────────────────────────────
