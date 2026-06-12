@@ -4,10 +4,19 @@
       "id": "mqacdh7wjf93",
       "name": "Asian Beef",
       "notes": "",
-      "ingredients": []
+      "ingredients": [
+        {
+          "id": "mqachp8yazsy",
+          "name": "Ground beef",
+          "quantity": "1",
+          "unit": "lbs"
+        }
+      ]
     }
   ],
-  "ingredientLinks": {},
+  "ingredientLinks": {
+    "ground beef": "https://www.walmart.com/ip/Marketside-Organic-Grass-Fed-Ground-Beef-85-Lean-15-Fat-1-lb/49769689?classType=REGULAR&athbdg=L1102"
+  },
   "weekPlan": {
     "recipeIds": []
   },
