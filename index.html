@@ -134,6 +134,11 @@ textarea{min-height:80px;resize:vertical;}
 
 /* ── Loading ── */
 .loading{text-align:center;padding:52px;color:var(--brown-light);font-size:16px;}
+.macro-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px;}
+.macro-box{background:var(--cream);border:1px solid var(--border);border-radius:8px;padding:7px 4px;text-align:center;}
+.macro-val{font-size:16px;font-weight:700;color:var(--brown-dark);}
+.macro-lbl{font-size:10px;font-weight:600;color:var(--brown-light);text-transform:uppercase;letter-spacing:.3px;margin-top:2px;}
+.macro-compact{font-size:12px;color:var(--brown-light);margin-top:5px;}
 </style>
 </head>
 <body>
@@ -174,6 +179,19 @@ textarea{min-height:80px;resize:vertical;}
       <input type="text" id="r-name" placeholder="e.g. Chicken Tacos"></div>
     <div class="fg"><label>Notes / Instructions (optional)</label>
       <textarea id="r-notes" placeholder="e.g. Marinate 30 min before cooking…"></textarea></div>
+    <div class="sec-lbl" style="margin-top:4px">Nutrition Per Serving (optional)</div>
+    <div class="row2">
+      <div class="fg"><label>Servings</label><input type="number" id="r-servings" placeholder="e.g. 4" min="1" step="1"></div>
+      <div class="fg"><label>Calories</label><input type="number" id="r-cal" placeholder="0" min="0"></div>
+    </div>
+    <div class="row2">
+      <div class="fg"><label>Protein (g)</label><input type="number" id="r-protein" placeholder="0" min="0"></div>
+      <div class="fg"><label>Carbs (g)</label><input type="number" id="r-carbs" placeholder="0" min="0"></div>
+    </div>
+    <div class="row2">
+      <div class="fg"><label>Fat (g)</label><input type="number" id="r-fat" placeholder="0" min="0"></div>
+      <div class="fg"><label>Fiber (g)</label><input type="number" id="r-fiber" placeholder="0" min="0"></div>
+    </div>
     <div class="modal-actions">
       <button class="btn btn-secondary" onclick="closeModal('recipe-overlay')">Cancel</button>
       <button class="btn btn-primary" onclick="saveRecipe()">Save</button>
@@ -193,6 +211,11 @@ textarea{min-height:80px;resize:vertical;}
       <button class="btn btn-ghost" onclick="editCurrentRecipe()">Edit</button>
     </div>
     <div id="view-notes" style="font-size:14px;color:var(--brown-light);margin-bottom:12px;white-space:pre-wrap;display:none"></div>
+    <div id="view-macros" style="display:none">
+      <div class="sec-lbl" id="view-macros-label">Per Serving</div>
+      <div class="macro-grid" id="view-macros-grid"></div>
+    </div>
+    <button id="calc-btn" class="btn btn-secondary btn-full" style="margin-bottom:12px;display:none" onclick="calculateMacros()">✨ Calculate Macros with AI</button>
     <div class="sec-lbl">Ingredients</div>
     <div id="view-ings"></div>
     <button class="btn btn-primary btn-full" style="margin-top:14px" onclick="openIngModal(null)">+ Add Ingredient</button>
@@ -239,10 +262,11 @@ const S = {
   data: { recipes:[], ingredientLinks:{}, weekPlan:{recipeIds:[]}, pantryStaples:[], checkedItems:[] },
   sha: null,
   token: localStorage.getItem('mp_token') || '',
+  anthropicKey: localStorage.getItem('mp_anthropic_key') || '',
   view: 'recipes',
-  viewId: null,   // recipe being viewed
-  editId: null,   // recipe being edited
-  ingId: null,    // ingredient being edited
+  viewId: null,
+  editId: null,
+  ingId: null,
   saving: false,
   saveQueued: false,
 };
@@ -409,12 +433,21 @@ function renderRecipes(){
   c.innerHTML=recipes.map(r=>{
     const n=(r.ingredients||[]).length;
     const inWeek=weekPlan.recipeIds.includes(r.id);
+    const m=r.macros;
+    const macroLine=m?[
+      m.calories&&`${m.calories} cal`,
+      m.protein&&`${m.protein}g protein`,
+      m.carbs&&`${m.carbs}g carbs`,
+      m.fat&&`${m.fat}g fat`,
+      m.fiber&&`${m.fiber}g fiber`,
+    ].filter(Boolean).join(' · '):'';
     return `<div class="card" style="cursor:pointer" onclick="openViewModal('${r.id}')">
       <div style="display:flex;justify-content:space-between;align-items:flex-start">
         <div class="card-title">${esc(r.name)}</div>
         ${inWeek?'<span style="font-size:12px;color:var(--terracotta);font-weight:600">📅 This Week</span>':''}
       </div>
-      <div class="card-sub">${n} ingredient${n!==1?'s':''}</div>
+      <div class="card-sub">${n} ingredient${n!==1?'s':''}${r.servings?` · ${r.servings} servings`:''}</div>
+      ${macroLine?`<div class="macro-compact">${esc(macroLine)}</div>`:''}
       ${r.notes?`<div style="font-size:13px;color:var(--brown-light);margin-top:6px;overflow:hidden;max-height:36px">${esc(r.notes)}</div>`:''}
     </div>`;
   }).join('');
@@ -517,6 +550,7 @@ function addWalmartLink(normNm){
 
 // ── Settings view ─────────────────────────────────────────────
 function renderSettings(){
+  const hasAI=!!S.anthropicKey;
   const has=!!S.token;
   $('content').innerHTML=`
   <div class="set-block">
@@ -547,6 +581,22 @@ function renderSettings(){
           </div>`).join('')
       : '<div style="font-size:14px;color:var(--brown-light)">None set yet.</div>'
     }
+  </div>
+  <div class="set-block">
+    <h3>✨ AI Macro Calculator</h3>
+    <div class="status-bar ${hasAI?'ok':'warn'}">${hasAI?'✓ Anthropic key set — AI macros enabled':'No key set — add one to calculate macros automatically'}</div>
+    <div class="fg"><label>Anthropic API Key</label>
+      <input type="password" id="anthropic-inp" value="${hasAI?'••••••••':''}">
+    </div>
+    <button class="btn btn-primary btn-full" onclick="saveAnthropicKey()">Save Key</button>
+    ${hasAI?`<button class="btn btn-danger btn-full" style="margin-top:8px" onclick="clearAnthropicKey()">Remove Key</button>`:''}
+    <div style="margin-top:12px;font-size:13px;color:var(--brown-light);line-height:1.6">
+      <strong>How to get a key:</strong><br>
+      1. Go to <strong>console.anthropic.com</strong> and sign up<br>
+      2. Click <strong>API Keys</strong> in the left menu<br>
+      3. Click <strong>Create Key</strong>, copy it, paste above<br><br>
+      Each macro calculation costs a tiny fraction of a cent.
+    </div>
   </div>
   <div class="set-block">
     <h3>🔗 Walmart Links</h3>
@@ -581,6 +631,16 @@ function clearToken(){
   S.token=''; localStorage.removeItem('mp_token');
   toast('Token removed'); renderSettings();
 }
+function saveAnthropicKey(){
+  const v=$('anthropic-inp').value.trim();
+  if(!v||v.includes('•')){ toast('Paste your actual key first'); return; }
+  S.anthropicKey=v; localStorage.setItem('mp_anthropic_key',v);
+  toast('API key saved!'); renderSettings();
+}
+function clearAnthropicKey(){
+  S.anthropicKey=''; localStorage.removeItem('mp_anthropic_key');
+  toast('API key removed'); renderSettings();
+}
 function removePantry(nm){
   const i=S.data.pantryStaples.indexOf(nm);
   if(i>=0) S.data.pantryStaples.splice(i,1);
@@ -598,6 +658,13 @@ function openRecipeModal(id){
   $('recipe-modal-title').textContent=r?'Edit Recipe':'Add Recipe';
   $('r-name').value=r?r.name:'';
   $('r-notes').value=r?(r.notes||''):'';
+  const m=r?(r.macros||{}):{};
+  $('r-servings').value=r?(r.servings||''):'';
+  $('r-cal').value=m.calories||'';
+  $('r-protein').value=m.protein||'';
+  $('r-carbs').value=m.carbs||'';
+  $('r-fat').value=m.fat||'';
+  $('r-fiber').value=m.fiber||'';
   $('recipe-del-zone').style.display=r?'block':'none';
   $('recipe-overlay').classList.remove('hidden');
   setTimeout(()=>$('r-name').focus(),300);
@@ -610,11 +677,20 @@ function saveRecipe(){
   const name=$('r-name').value.trim();
   if(!name){ toast('Please enter a recipe name'); return; }
   const notes=$('r-notes').value.trim();
+  const servings=parseInt($('r-servings').value)||null;
+  const macros={
+    calories:parseFloat($('r-cal').value)||0,
+    protein:parseFloat($('r-protein').value)||0,
+    carbs:parseFloat($('r-carbs').value)||0,
+    fat:parseFloat($('r-fat').value)||0,
+    fiber:parseFloat($('r-fiber').value)||0,
+  };
+  const hasMacros=Object.values(macros).some(v=>v>0);
   if(S.editId){
     const r=S.data.recipes.find(x=>x.id===S.editId);
-    if(r){ r.name=name; r.notes=notes; }
+    if(r){ r.name=name; r.notes=notes; r.servings=servings; r.macros=hasMacros?macros:null; }
   } else {
-    S.data.recipes.push({id:uid(),name,notes,ingredients:[]});
+    S.data.recipes.push({id:uid(),name,notes,servings,macros:hasMacros?macros:null,ingredients:[]});
   }
   closeModal('recipe-overlay');
   render(); scheduleSave();
@@ -637,6 +713,20 @@ function openViewModal(id){
   $('view-title').textContent=r.name;
   const nd=$('view-notes');
   if(r.notes){ nd.textContent=r.notes; nd.style.display='block'; } else nd.style.display='none';
+  const md=$('view-macros'), m=r.macros;
+  if(m && Object.values(m).some(v=>v>0)){
+    $('view-macros-label').textContent=r.servings?`Per Serving (makes ${r.servings})`:'Per Serving';
+    const items=[
+      {v:m.calories,l:'Calories',u:''},
+      {v:m.protein,l:'Protein',u:'g'},
+      {v:m.carbs,l:'Carbs',u:'g'},
+      {v:m.fat,l:'Fat',u:'g'},
+      {v:m.fiber,l:'Fiber',u:'g'},
+    ].filter(i=>i.v);
+    $('view-macros-grid').innerHTML=items.map(i=>`<div class="macro-box"><div class="macro-val">${i.v}</div><div class="macro-lbl">${i.l}${i.u}</div></div>`).join('');
+    md.style.display='block';
+  } else { md.style.display='none'; }
+  $('calc-btn').style.display=(r.ingredients||[]).length?'flex':'none';
   renderViewIngs();
   $('view-overlay').classList.remove('hidden');
 }
@@ -721,6 +811,60 @@ function deleteIng(){
   if(r) r.ingredients=(r.ingredients||[]).filter(i=>i.id!==S.ingId);
   closeIngModal();
   scheduleSave();
+}
+
+// ── AI Macro Calculator ───────────────────────────────────────
+async function calculateMacros(){
+  if(!S.anthropicKey){ toast('Add an Anthropic API key in ⚙️ Settings first'); return; }
+  const r=S.data.recipes.find(x=>x.id===S.viewId);
+  if(!r||(r.ingredients||[]).length===0){ toast('Add ingredients first'); return; }
+
+  const ingList=r.ingredients.map(i=>[i.quantity,i.unit,i.name].filter(Boolean).join(' ')).join('\n');
+  toast('Calculating macros…',99999);
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'x-api-key':S.anthropicKey,
+        'anthropic-version':'2023-06-01',
+        'anthropic-dangerous-direct-browser-access':'true'
+      },
+      body:JSON.stringify({
+        model:'claude-haiku-4-5-20251001',
+        max_tokens:300,
+        messages:[{role:'user',content:`Estimate nutrition for this recipe: "${r.name}"
+
+Ingredients:
+${ingList}
+${r.servings?`\nServings: ${r.servings}`:''}
+
+Reply with ONLY a JSON object, no explanation:
+{"servings":<number>,"calories":<kcal per serving>,"protein":<g per serving>,"carbs":<g per serving>,"fat":<g per serving>,"fiber":<g per serving>}`}]
+      })
+    });
+    if(!res.ok){ const e=await res.json(); throw new Error(e.error?.message||`API error ${res.status}`); }
+    const data=await res.json();
+    const match=data.content[0].text.match(/\{[\s\S]*\}/);
+    if(!match) throw new Error('Unexpected AI response format');
+    const result=JSON.parse(match[0]);
+    r.macros={
+      calories:Math.round(result.calories)||0,
+      protein:Math.round(result.protein)||0,
+      carbs:Math.round(result.carbs)||0,
+      fat:Math.round(result.fat)||0,
+      fiber:Math.round(result.fiber)||0,
+    };
+    if(result.servings&&!r.servings) r.servings=Math.round(result.servings);
+    $('toast').classList.remove('show');
+    openViewModal(S.viewId);
+    scheduleSave();
+    toast('✓ Macros calculated and saved');
+  } catch(e){
+    $('toast').classList.remove('show');
+    console.error('Macro AI error:',e);
+    toast('Calculation failed: '+e.message, 4000);
+  }
 }
 
 // ── Walmart Links Manager ─────────────────────────────────────
