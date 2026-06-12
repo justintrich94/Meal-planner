@@ -377,11 +377,11 @@ async function scheduleSave(){
 }
 
 // ── Navigation ───────────────────────────────────────────────
-const TITLES={recipes:'My Recipes',week:'This Week',shopping:'Shopping List',settings:'Settings'};
+const TITLES={recipes:'My Recipes',week:'This Week',shopping:'Shopping List',settings:'Settings',links:'Walmart Links'};
 
 function switchView(v){
   S.view=v;
-  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.view===v));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.view===v&&v!=='links'));
   $('hdr-title').textContent=TITLES[v];
   render();
 }
@@ -392,11 +392,12 @@ function render(){
   if(S.view==='recipes'){ fab.style.display='flex'; renderRecipes(); }
   else if(S.view==='week') renderWeek();
   else if(S.view==='shopping') renderShopping();
+  else if(S.view==='links'){ btn.textContent='←'; btn.style.display='flex'; renderLinks(); }
   else renderSettings();
 }
 
 function fabAction(){ if(S.view==='recipes') openRecipeModal(null); }
-function hdrAction(){}
+function hdrAction(){ if(S.view==='links') switchView('settings'); }
 
 // ── Recipes view ──────────────────────────────────────────────
 function renderRecipes(){
@@ -546,6 +547,11 @@ function renderSettings(){
           </div>`).join('')
       : '<div style="font-size:14px;color:var(--brown-light)">None set yet.</div>'
     }
+  </div>
+  <div class="set-block">
+    <h3>🔗 Walmart Links</h3>
+    <div style="font-size:13px;color:var(--brown-light);margin-bottom:12px;line-height:1.5">Add or edit Walmart links for all your ingredients in one place.</div>
+    <button class="btn btn-primary btn-full" onclick="switchView('links')">Manage Walmart Links →</button>
   </div>
   <div class="set-block">
     <h3>📥 Import from Paprika</h3>
@@ -714,6 +720,63 @@ function deleteIng(){
   const r=S.data.recipes.find(x=>x.id===S.viewId);
   if(r) r.ingredients=(r.ingredients||[]).filter(i=>i.id!==S.ingId);
   closeIngModal();
+  scheduleSave();
+}
+
+// ── Walmart Links Manager ─────────────────────────────────────
+function renderLinks(){
+  const allIngs=new Map();
+  for(const r of S.data.recipes)
+    for(const ing of (r.ingredients||[])){ const nm=key(ing.name); if(!allIngs.has(nm)) allIngs.set(nm,ing.name.trim()); }
+
+  if(!allIngs.size){
+    $('content').innerHTML=`<div class="empty"><div class="empty-icon">🔗</div><p>Add recipes with ingredients first.</p></div>`;
+    return;
+  }
+
+  const sorted=[...allIngs.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+  const missing=sorted.filter(([nm])=>!S.data.ingredientLinks[nm]);
+  const linked=sorted.filter(([nm])=>S.data.ingredientLinks[nm]);
+
+  let html=`<div style="font-size:13px;color:var(--brown-light);margin-bottom:12px">${linked.length} of ${sorted.length} ingredients linked</div>`;
+
+  if(missing.length){
+    html+=`<div class="sec-lbl">Needs a Link (${missing.length})</div><div class="card">`;
+    for(const [nm,displayName] of missing)
+      html+=`<div class="ing-row">
+        <span class="ing-name">${esc(displayName)}</span>
+        <button class="btn btn-ghost" style="font-size:13px;padding:6px 12px;flex-shrink:0" data-nm="${esc(nm)}" onclick="editLink(this.dataset.nm)">+ Add</button>
+      </div>`;
+    html+=`</div>`;
+  }
+
+  if(linked.length){
+    html+=`<div class="sec-lbl">Linked ✓ (${linked.length})</div><div class="card">`;
+    for(const [nm,displayName] of linked){
+      const url=S.data.ingredientLinks[nm];
+      html+=`<div class="ing-row">
+        <div style="flex:1;min-width:0">
+          <div class="ing-name">${esc(displayName)}</div>
+          <div style="font-size:11px;color:var(--brown-light);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:220px">${esc(url)}</div>
+        </div>
+        <a href="${esc(url)}" target="_blank" rel="noopener" style="font-size:20px;text-decoration:none;margin-right:4px">🔗</a>
+        <button class="ing-btn" data-nm="${esc(nm)}" onclick="editLink(this.dataset.nm)" title="Edit">✏️</button>
+      </div>`;
+    }
+    html+=`</div>`;
+  }
+
+  $('content').innerHTML=html;
+}
+
+function editLink(nm){
+  const current=S.data.ingredientLinks[nm]||'';
+  const displayName=[...S.data.recipes.flatMap(r=>(r.ingredients||[]).filter(i=>key(i.name)===nm).map(i=>i.name.trim()))][0]||nm;
+  const url=prompt(`Paste Walmart link for "${displayName}":${current?'\n\nCurrent: '+current:''}`,current);
+  if(url===null) return;
+  if(url.trim().startsWith('http')) S.data.ingredientLinks[nm]=url.trim();
+  else if(!url.trim()) delete S.data.ingredientLinks[nm];
+  renderLinks();
   scheduleSave();
 }
 
